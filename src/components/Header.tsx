@@ -57,11 +57,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link to="/demo">
+            <a href="#contact">
               <Button variant="navy" size="sm">
-                데모 요청
+                Contact
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -99,11 +99,11 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <Link to="/demo" onClick={() => setIsMenuOpen(false)}>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="navy" size="sm" className="w-full mt-2">
-                  데모 요청
+                  Contact
                 </Button>
-              </Link>
+              </a>
             </div>
           </nav>
         )}

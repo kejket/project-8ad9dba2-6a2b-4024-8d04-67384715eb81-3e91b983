@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-industrial.jpg";
@@ -41,10 +42,12 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <Button variant="hero" size="xl">
-                데모 요청
-                <ArrowRight size={20} />
-              </Button>
+              <Link to="/demo">
+                <Button variant="hero" size="xl">
+                  데모 요청
+                  <ArrowRight size={20} />
+                </Button>
+              </Link>
               <Button variant="hero-outline" size="xl">
                 솔루션 알아보기
               </Button>
