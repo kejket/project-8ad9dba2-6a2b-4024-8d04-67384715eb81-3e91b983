@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Mail } from "lucide-react";
 
@@ -22,13 +23,17 @@ const CTASection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Button variant="hero" size="xl">
-                데모 요청하기
-                <ArrowRight size={20} />
-              </Button>
-              <Button variant="hero-outline" size="xl">
-                기술 상담 신청
-              </Button>
+              <Link to="/demo">
+                <Button variant="hero" size="xl">
+                  데모 요청하기
+                  <ArrowRight size={20} />
+                </Button>
+              </Link>
+              <Link to="/consultation">
+                <Button variant="hero-outline" size="xl">
+                  기술 상담 신청
+                </Button>
+              </Link>
             </div>
 
             {/* Contact Info */}
