@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
@@ -362,10 +363,12 @@ const Solutions = () => {
                 <p className="text-lg text-primary-foreground/80 mb-8">
                   현장 환경과 요구사항을 분석하여 최적의 모니터링 구성을 제안해 드립니다.
                 </p>
-                <Button variant="hero" size="xl">
-                  현장 진단 및 상담 요청
-                  <ArrowRight size={20} />
-                </Button>
+                <Link to="/consultation">
+                  <Button variant="hero" size="xl">
+                    현장 진단 및 상담 요청
+                    <ArrowRight size={20} />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
