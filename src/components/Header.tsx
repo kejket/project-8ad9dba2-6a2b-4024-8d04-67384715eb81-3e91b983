@@ -55,13 +55,12 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="#contact">
+            <Link to="/contact">
               <Button variant="navy" size="sm">
                 Contact
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -99,11 +98,11 @@ const Header = () => {
                   </a>
                 )
               ))}
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="navy" size="sm" className="w-full mt-2">
                   Contact
                 </Button>
-              </a>
+              </Link>
             </div>
           </nav>
         )}
