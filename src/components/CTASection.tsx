@@ -42,10 +42,9 @@ const CTASection = () => {
                 <Phone size={16} />
                 <span className="text-sm">02-0000-0000</span>
               </a>
-              <a href="mailto:contact@sentia.co.kr" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
+              <a href="mailto:contact@sentia.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors">
                 <Mail size={16} />
-                <span className="text-sm">contact@sentia.co.kr</span>
-                <span className="text-sm">contact@e-snt.co.kr</span>
+                <span className="text-sm">contact@sentia.com</span>
               </a>
             </div>
           </div>

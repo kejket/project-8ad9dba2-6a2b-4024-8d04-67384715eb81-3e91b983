@@ -48,9 +48,11 @@ const HeroSection = () => {
                   <ArrowRight size={20} />
                 </Button>
               </Link>
-              <Button variant="hero-outline" size="xl">
-                솔루션 알아보기
-              </Button>
+              <Link to="/solutions">
+                <Button variant="hero-outline" size="xl">
+                  솔루션 알아보기
+                </Button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}
