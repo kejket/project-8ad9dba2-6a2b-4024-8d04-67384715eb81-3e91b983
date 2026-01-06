@@ -57,10 +57,10 @@ const Footer = () => {
             © 2024 sentia. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">
+            <a href="/privacy" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">
               개인정보처리방침
             </a>
-            <a href="#" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">
+            <a href="/terms" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">
               이용약관
             </a>
           </div>
