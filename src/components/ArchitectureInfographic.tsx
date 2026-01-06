@@ -71,7 +71,7 @@ const ArchitectureInfographic = () => {
           System Architecture
         </span>
         <h3 className="text-xl lg:text-2xl font-bold text-foreground">
-          e-snt 솔루션 아키텍처
+          sentia 솔루션 아키텍처
         </h3>
         <p className="text-sm text-muted-foreground mt-2">
           센서부터 디지털 트윈까지 데이터 흐름
