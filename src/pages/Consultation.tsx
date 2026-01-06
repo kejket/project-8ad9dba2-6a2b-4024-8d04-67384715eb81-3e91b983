@@ -126,25 +126,28 @@ const Consultation = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24 pb-16">
+      {/* Page Header */}
+      <section className="pt-24 pb-16 gradient-hero">
         <div className="container-narrow section-padding">
-          {/* Page Header */}
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="inline-block text-sm font-medium text-industrial mb-4">
+          <div className="max-w-3xl pt-12">
+            <span className="inline-block text-sm font-medium text-industrial-light mb-4 tracking-wider">
               TECHNICAL CONSULTATION
             </span>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
               기술 상담 요청
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
               센싱 솔루션의 기술적 적합성이나 현장 적용 가능성에 대해 
               부담 없이 상담받으실 수 있습니다.
-            </p>
-            <p className="text-muted-foreground mt-2">
               현장 환경, 기존 시스템 연동, 센서 선정 등 기술적인 고민이 있으시다면 
               저희 엔지니어가 직접 검토하고 답변드립니다.
             </p>
           </div>
+        </div>
+      </section>
+
+      <main className="py-16">
+        <div className="container-narrow section-padding">
 
           {/* Process Steps */}
           <div className="grid sm:grid-cols-3 gap-6 mb-16">
