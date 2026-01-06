@@ -143,8 +143,8 @@ const Demo = () => {
                   key={step.step}
                   className="relative bg-card border border-border rounded-lg p-6 text-center"
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-lg mb-4">
-                    <step.icon size={24} />
+                  <div className="w-12 h-12 rounded-full bg-industrial/10 flex items-center justify-center mx-auto mb-4">
+                    <step.icon size={24} className="text-industrial" />
                   </div>
                   <div className="text-xs font-medium text-muted-foreground mb-2">
                     STEP {step.step}
