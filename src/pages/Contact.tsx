@@ -96,23 +96,26 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24 pb-16">
+      {/* Page Header */}
+      <section className="pt-24 pb-16 gradient-hero">
         <div className="container-narrow section-padding">
-          {/* Page Header */}
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <span className="inline-block text-sm font-medium text-industrial mb-4">
+          <div className="max-w-3xl pt-12">
+            <span className="inline-block text-sm font-medium text-industrial-light mb-4 tracking-wider">
               CONTACT
             </span>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
               문의하기
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
               일반 문의, 제휴 제안, 기타 의견을 남겨주세요.
-            </p>
-            <p className="text-muted-foreground">
               담당자가 확인 후 빠르게 답변드리겠습니다.
             </p>
           </div>
+        </div>
+      </section>
+
+      <main className="py-16">
+        <div className="container-narrow section-padding">
 
           <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {/* Form Section */}

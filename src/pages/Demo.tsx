@@ -111,19 +111,26 @@ const Demo = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24 pb-20">
-        <div className="container mx-auto px-4">
-          {/* Page Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+      {/* Page Header */}
+      <section className="pt-24 pb-16 gradient-hero">
+        <div className="container-narrow section-padding">
+          <div className="max-w-3xl pt-12">
+            <span className="inline-block text-sm font-medium text-industrial-light mb-4 tracking-wider">
+              DEMO REQUEST
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
               데모 요청
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
               현장 환경에 적합한 센싱 솔루션인지 확인하실 수 있도록,
-              <br className="hidden sm:block" />
               실제 데이터 기반의 데모를 제공해 드립니다.
             </p>
           </div>
+        </div>
+      </section>
+
+      <main className="py-16">
+        <div className="container-narrow section-padding">
 
           {/* Process Steps */}
           <div className="max-w-4xl mx-auto mb-16">
