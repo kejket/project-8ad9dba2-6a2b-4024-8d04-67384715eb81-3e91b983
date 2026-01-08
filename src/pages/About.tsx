@@ -81,11 +81,11 @@ const About = () => {
             <div className="max-w-6xl">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                 {/* Image */}
-                <div className="w-full lg:w-2/5 flex-shrink-0">
+                <div className="w-full lg:w-2/5 flex-shrink-0 flex items-stretch">
                   <img 
                     src={sentiaBrandImage} 
                     alt="Sentia Brand" 
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-full rounded-lg object-cover"
                   />
                 </div>
                 {/* Text Content */}
