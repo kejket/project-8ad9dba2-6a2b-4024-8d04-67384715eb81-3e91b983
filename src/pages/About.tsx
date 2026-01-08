@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import sentiaBrandImage from "@/assets/sentia-brand.png";
+import sentiaBrandImage from "@/assets/Image_Mock-up_sentia-4.png";
 
 const About = () => {
   const principles = [
@@ -79,13 +79,13 @@ const About = () => {
         <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-6xl">
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
                 {/* Image */}
-                <div className="w-full lg:w-2/5 flex-shrink-0">
+                <div className="w-full lg:w-2/5 flex-shrink-0 flex">
                   <img 
                     src={sentiaBrandImage} 
                     alt="Sentia Brand" 
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-full rounded-lg object-cover"
                   />
                 </div>
                 {/* Text Content */}
