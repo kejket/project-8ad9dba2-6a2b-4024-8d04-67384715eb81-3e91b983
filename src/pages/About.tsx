@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { ArrowRight, Radio, Brain, Target } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import sentiaBrandImage from "@/assets/sentia-brand.png";
 
@@ -30,21 +30,18 @@ const About = () => {
       step: "01",
       title: "Sense",
       titleKo: "감지",
-      icon: Radio,
       description: "산업 현장의 물리적, 운영적 조건을 센싱 기술을 통해 데이터로 수집합니다. 보이지 않던 미세한 변화와 잠재적 위험 요소까지 포착합니다."
     },
     {
       step: "02",
       title: "Understand",
       titleKo: "이해",
-      icon: Brain,
       description: "수집된 데이터를 검증하고 분석하여 의미 있는 정보로 변환합니다. 패턴, 이상 징후, 변화 추이를 식별하여 현장 상황을 정확하게 파악합니다."
     },
     {
       step: "03",
       title: "Decide",
       titleKo: "판단",
-      icon: Target,
       description: "분석된 정보를 바탕으로 운영 판단을 지원합니다. 더 안전하고 효율적인 의사결정이 가능하도록 신뢰할 수 있는 근거를 제공합니다."
     }
   ];
@@ -165,31 +162,25 @@ const About = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {workProcess.map((process, index) => {
-                const IconComponent = process.icon;
-                return (
-                  <div key={index} className="relative">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-navy/10 flex items-center justify-center">
-                        <IconComponent className="w-7 h-7 text-navy" />
-                      </div>
-                      <span className="text-4xl font-bold text-navy/20">{process.step}</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-1">
-                      {process.title}
-                    </h3>
-                    <p className="text-sm text-navy font-medium mb-3">{process.titleKo}</p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {process.description}
-                    </p>
-                    {index < workProcess.length - 1 && (
-                      <div className="hidden md:block absolute top-8 -right-4 text-border">
-                        <ArrowRight size={24} />
-                      </div>
-                    )}
+              {workProcess.map((process, index) => (
+                <div key={index} className="relative">
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-navy/20">{process.step}</span>
                   </div>
-                );
-              })}
+                  <h3 className="text-xl font-bold text-foreground mb-1">
+                    {process.title}
+                  </h3>
+                  <p className="text-sm text-navy font-medium mb-3">{process.titleKo}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {process.description}
+                  </p>
+                  {index < workProcess.length - 1 && (
+                    <div className="hidden md:block absolute top-8 -right-4 text-border">
+                      <ArrowRight size={24} />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
