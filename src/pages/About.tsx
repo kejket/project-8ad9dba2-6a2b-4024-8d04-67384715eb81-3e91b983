@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import sentiaBrandImage from "@/assets/sentia-brand.png";
 
 const About = () => {
   const principles = [
@@ -77,20 +78,33 @@ const About = () => {
         {/* Section 2: What SENTIA Means */}
         <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-                SENTIA라는 이름의 의미
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  sentia는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합에서 비롯된 이름입니다.
-                </p>
-                <p>
-                  이 이름은 단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 해석하고 의미 있는 이해로 전환하는 sentia의 핵심 역할을 반영합니다.
-                </p>
-                <p>
-                  산업 현장에서 발생하는 물리적 현상을 감지(Sense)하고, 이를 통찰력 있는 정보(Intelligence)로 변환하여, 신뢰할 수 있는 판단의 기반을 만드는 것이 sentia가 추구하는 가치입니다.
-                </p>
+            <div className="max-w-6xl">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                {/* Image */}
+                <div className="w-full lg:w-2/5 flex-shrink-0">
+                  <img 
+                    src={sentiaBrandImage} 
+                    alt="Sentia Brand" 
+                    className="w-full h-auto rounded-lg object-cover"
+                  />
+                </div>
+                {/* Text Content */}
+                <div className="flex-1 lg:w-3/5">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+                    SENTIA라는 이름의 의미
+                  </h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      sentia는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합에서 비롯된 이름입니다.
+                    </p>
+                    <p>
+                      이 이름은 단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 해석하고 의미 있는 이해로 전환하는 sentia의 핵심 역할을 반영합니다.
+                    </p>
+                    <p>
+                      산업 현장에서 발생하는 물리적 현상을 감지(Sense)하고, 이를 통찰력 있는 정보(Intelligence)로 변환하여, 신뢰할 수 있는 판단의 기반을 만드는 것이 sentia가 추구하는 가치입니다.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
