@@ -45,7 +45,8 @@ const IndustriesSection = () => {
             <span className="block sm:inline">적용</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            제조, 화학, 에너지, 인프라 등 각 산업은 고유한 설비 환경과 안전 요구사항을 가집니다. 
+            제조, 화학, 에너지, 인프라 등 각 산업은 고유한 설비 환경과 안전 요구사항을 가집니다.
+            <br />
             sentia는 이러한 산업별 조건에 맞춘 모니터링 구성을 제공합니다.
           </p>
         </div>
