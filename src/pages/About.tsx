@@ -103,6 +103,9 @@ const About = () => {
                     <p>
                       산업 현장에서 발생하는 물리적 현상을 감지(Sense)하고, 이를 통찰력 있는 정보(Intelligence)로 변환하여, 신뢰할 수 있는 판단의 기반을 만드는 것이 sentia가 추구하는 가치입니다.
                     </p>
+                    <p>
+                      SENTIA는 기술이 산업과 사회에 긍정적인 영향을 미치도록 고민합니다.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -120,7 +123,7 @@ const About = () => {
               <div className="space-y-6">
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    sentia에게 기술은 현실을 정확하게 이해하기 위한 도구입니다. 기술 그 자체가 목적이 아닙니다.
+                    sentia에게 기술은 현실을 정확하게 이해하기 위한 도구입니다. 
                   </p>
                   <p>
                     정확한 센싱은 신뢰할 수 있는 시스템의 기초입니다. 데이터의 품질과 정합성이 보장되지 않으면, 그 위에 구축되는 모든 분석과 판단은 의미를 잃습니다.
