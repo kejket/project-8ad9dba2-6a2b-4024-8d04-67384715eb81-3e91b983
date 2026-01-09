@@ -134,15 +134,15 @@ const About = () => {
                 </div>
                 
                 <div className="grid sm:grid-cols-3 gap-4 pt-4">
-                  <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="p-4 bg-card rounded-lg border border-border">
                     <h4 className="font-semibold text-foreground mb-2">적용 가능성</h4>
                     <p className="text-sm text-muted-foreground">실제 산업 환경에서 안정적으로 운영될 수 있는 기술</p>
                   </div>
-                  <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="p-4 bg-card rounded-lg border border-border">
                     <h4 className="font-semibold text-foreground mb-2">신뢰성</h4>
                     <p className="text-sm text-muted-foreground">검증된 데이터와 일관된 결과를 제공하는 시스템</p>
                   </div>
-                  <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="p-4 bg-card rounded-lg border border-border">
                     <h4 className="font-semibold text-foreground mb-2">현장 중심</h4>
                     <p className="text-sm text-muted-foreground">현장 전문가의 판단을 지원하는 실용적 접근</p>
                   </div>
@@ -204,7 +204,7 @@ const About = () => {
               {principles.map((principle, index) => (
                 <div 
                   key={index} 
-                  className="p-6 bg-background rounded-lg border border-border"
+                  className="p-6 bg-card rounded-lg border border-border"
                 >
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     {principle.title}
