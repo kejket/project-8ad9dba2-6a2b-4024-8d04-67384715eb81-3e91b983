@@ -11,24 +11,30 @@ interface IndustryDetailProps {
   id: string;
   icon: LucideIcon;
   name: string;
+  sectionTitle?: string;
   overview: string;
   challenges: string[];
   approach: string;
   useCases: UseCase[];
   benefits: string[];
   isHighlighted?: boolean;
+  ctaText?: string;
+  ctaSubText?: string;
 }
 
 const IndustryDetailSection = ({
   id,
   icon: Icon,
   name,
+  sectionTitle,
   overview,
   challenges,
   approach,
   useCases,
   benefits,
   isHighlighted = false,
+  ctaText,
+  ctaSubText,
 }: IndustryDetailProps) => {
   return (
     <section
@@ -37,18 +43,25 @@ const IndustryDetailSection = ({
     >
       <div className="container-narrow section-padding">
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-14 h-14 rounded-xl bg-industrial/10 flex items-center justify-center">
-            <Icon size={28} className="text-industrial" />
+        <div className="mb-10">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-xl bg-industrial/10 flex items-center justify-center">
+              <Icon size={28} className="text-industrial" />
+            </div>
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+                {name}
+              </h2>
+              {isHighlighted && (
+                <span className="text-sm text-industrial font-medium">중점 산업</span>
+              )}
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-              {name}
-            </h2>
-            {isHighlighted && (
-              <span className="text-sm text-industrial font-medium">중점 산업</span>
-            )}
-          </div>
+          {sectionTitle && (
+            <p className="text-lg text-muted-foreground font-medium mt-4">
+              {sectionTitle}
+            </p>
+          )}
         </div>
 
         {/* Overview & Challenges */}
@@ -113,18 +126,23 @@ const IndustryDetailSection = ({
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <Button asChild size="lg" className="bg-industrial hover:bg-industrial/90">
-            <Link to="/consultation">
-              현장진단 및 상담요청
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link to="/contact">
-              기술상담
-            </Link>
-          </Button>
+        <div className="pt-4">
+          {ctaSubText && (
+            <p className="text-muted-foreground mb-4">{ctaSubText}</p>
+          )}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button asChild size="lg" className="bg-industrial hover:bg-industrial/90">
+              <Link to="/consultation">
+                {ctaText || "현장진단 및 상담요청"}
+                <ArrowRight size={18} className="ml-2" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/contact">
+                기술상담
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
