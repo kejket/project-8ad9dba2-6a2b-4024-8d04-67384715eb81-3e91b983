@@ -1,7 +1,7 @@
 interface PageHeaderProps {
   label: string;
   title: string | React.ReactNode;
-  description: string;
+  description: string | React.ReactNode;
 }
 
 const PageHeader = ({ label, title, description }: PageHeaderProps) => {

@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import IndustriesSection from "@/components/IndustriesSection";
+import IndustryQuickNav from "@/components/IndustryQuickNav";
+import IndustryPageContent from "@/components/IndustryPageContent";
 
 const Industry = () => {
   return (
@@ -10,10 +11,17 @@ const Industry = () => {
       <main>
         <PageHeader
           label="INDUSTRIES"
-          title="제조 현장을 정확하게 이해합니다"
-          description="sentia의 센싱 솔루션은 제조 현장의 미세한 변화와 보이지 않는 위험 요소를 감지하여 산업별 운영 요구에 맞는 안전하고 효율적인 판단을 지원합니다."
+          title="산업별 센싱 솔루션"
+          description={
+            <>
+              sentia의 센싱 솔루션은 산업별 현장 환경과 운영 조건을 고려해 설계됩니다.
+              <br className="hidden sm:block" />
+              각 산업이 가진 고유한 문제를 데이터 기반으로 이해하고, 실질적인 운영 개선을 지원합니다.
+            </>
+          }
         />
-        <IndustriesSection />
+        <IndustryQuickNav />
+        <IndustryPageContent />
       </main>
       <Footer />
     </div>
