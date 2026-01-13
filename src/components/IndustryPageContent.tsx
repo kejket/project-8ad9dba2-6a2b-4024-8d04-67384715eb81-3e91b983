@@ -3,7 +3,7 @@ import IndustryDetailSection from "./IndustryDetailSection";
 
 const industries = [
   {
-    id: "manufacturing",
+    id: "industry-manufacturing",
     icon: Factory,
     name: "제조업",
     sectionTitle: "제조 현장의 상태를 이해하는 센싱 솔루션",
@@ -38,7 +38,7 @@ const industries = [
     ctaSubText: "현장 환경과 운영 조건을 기반으로 한 진단부터 함께합니다.",
   },
   {
-    id: "environment",
+    id: "industry-environment",
     icon: Droplets,
     name: "환경·수질·대기",
     overview: "환경 모니터링 현장은 수질, 대기질, 토양 등 다양한 환경 인자를 지속적으로 관측하고 관리해야 하는 영역입니다. 측정 대상이 광범위하고 외부 조건에 따라 데이터 변동이 크기 때문에, 안정적인 데이터 수집과 변화 추이 파악이 중요합니다.",
@@ -70,7 +70,7 @@ const industries = [
     ],
   },
   {
-    id: "steel",
+    id: "industry-steel",
     icon: Flame,
     name: "철강·금속",
     overview: "철강·금속 산업은 고온, 고부하, 분진 등 극한 환경에서 설비가 운영되는 특성을 가집니다. 이러한 조건에서는 설비 상태를 정확히 파악하기 어렵고, 이상 발생 시 신속한 대응이 필수적입니다.",
@@ -102,7 +102,7 @@ const industries = [
     ],
   },
   {
-    id: "automotive",
+    id: "industry-automotive",
     icon: Cog,
     name: "자동차",
     overview: "자동차 제조 현장은 프레스, 용접, 도장, 조립 등 다양한 공정이 연속적으로 이루어지는 복합 생산 환경입니다. 각 공정의 품질과 설비 상태가 최종 제품 품질에 직접적인 영향을 미치기 때문에, 공정 안정성 확보가 핵심 과제입니다.",
@@ -134,7 +134,7 @@ const industries = [
     ],
   },
   {
-    id: "energy",
+    id: "industry-energy",
     icon: Zap,
     name: "에너지·발전",
     overview: "에너지·발전 산업은 터빈, 보일러, 변압기 등 대형 설비가 연속 운전되는 환경입니다. 설비 상태의 작은 변화도 발전 효율과 안전에 영향을 미칠 수 있어, 지속적인 모니터링과 상태 파악이 필수적입니다.",
@@ -166,7 +166,7 @@ const industries = [
     ],
   },
   {
-    id: "construction",
+    id: "industry-construction",
     icon: Building2,
     name: "건설·인프라",
     overview: "건설·인프라 분야는 교량, 터널, 건물 등 대형 구조물의 상태를 장기간에 걸쳐 모니터링해야 하는 특성을 가집니다. 구조물의 변형, 진동, 균열 등을 지속적으로 관찰하여 안전성을 확보하고 유지관리 계획을 수립하는 것이 중요합니다.",
