@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import DigitalTwinSection from "@/components/DigitalTwinSection";
+import DigitalTwinSummary from "@/components/DigitalTwinSummary";
 import ArchitectureInfographic from "@/components/ArchitectureInfographic";
 import { Button } from "@/components/ui/button";
 import { 
   AlertTriangle, 
-  Eye, 
+  Eye,
   Clock, 
   Database,
   Thermometer,
@@ -344,8 +344,8 @@ const Solutions = () => {
           </div>
         </section>
 
-        {/* Digital Twin Section */}
-        <DigitalTwinSection />
+        {/* Digital Twin Summary */}
+        <DigitalTwinSummary />
 
         {/* CTA Section */}
         <section className="py-20 bg-background">
