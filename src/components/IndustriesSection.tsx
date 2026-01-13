@@ -5,37 +5,37 @@ const industries = [
   {
     icon: Factory,
     name: "제조업",
-    anchor: "manufacturing",
+    anchor: "industry-manufacturing",
     description: "설비 상태를 지속적으로 모니터링하여 이상 징후를 조기에 파악할 수 있도록 지원합니다.",
   },
   {
     icon: Droplets,
     name: "환경/수질·대기",
-    anchor: "environment",
+    anchor: "industry-environment",
     description: "환경 데이터를 안정적으로 수집하여 변화 추이를 파악하고 관리 기준 수립을 돕습니다.",
   },
   {
     icon: Flame,
     name: "철강/금속",
-    anchor: "steel",
+    anchor: "industry-steel",
     description: "고온·고부하 환경에서도 설비 상태를 모니터링해 현장 대응 판단을 지원합니다.",
   },
   {
     icon: Cog,
     name: "자동차",
-    anchor: "automotive",
+    anchor: "industry-automotive",
     description: "생산 공정과 설비 상태 데이터를 기반으로 공정 안정성 확보를 돕습니다.",
   },
   {
     icon: Zap,
     name: "에너지/발전",
-    anchor: "energy",
+    anchor: "industry-energy",
     description: "발전 설비의 운전 상태를 지속적으로 확인해 운영 효율과 안전 관리에 활용합니다.",
   },
   {
     icon: Building2,
     name: "건설/인프라",
-    anchor: "construction",
+    anchor: "industry-construction",
     description: "현장 상태 데이터를 수집·분석하여 점검과 유지관리 의사결정을 지원합니다.",
   },
 ];

@@ -1,12 +1,12 @@
 import { Factory, Droplets, Flame, Cog, Zap, Building2 } from "lucide-react";
 
 const industries = [
-  { id: "manufacturing", name: "제조업", icon: Factory },
-  { id: "environment", name: "환경·수질·대기", icon: Droplets },
-  { id: "steel", name: "철강·금속", icon: Flame },
-  { id: "automotive", name: "자동차", icon: Cog },
-  { id: "energy", name: "에너지·발전", icon: Zap },
-  { id: "construction", name: "건설·인프라", icon: Building2 },
+  { id: "industry-manufacturing", name: "제조업", icon: Factory },
+  { id: "industry-environment", name: "환경·수질·대기", icon: Droplets },
+  { id: "industry-steel", name: "철강·금속", icon: Flame },
+  { id: "industry-automotive", name: "자동차", icon: Cog },
+  { id: "industry-energy", name: "에너지·발전", icon: Zap },
+  { id: "industry-construction", name: "건설·인프라", icon: Building2 },
 ];
 
 const IndustryQuickNav = () => {
