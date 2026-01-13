@@ -62,7 +62,7 @@ const considerations = [
 
 const DigitalTwinSection = () => {
   return (
-    <section className="py-20 gradient-subtle">
+    <section id="digital-twin" className="py-20 gradient-subtle">
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="max-w-4xl mb-16">

@@ -1,41 +1,27 @@
-import { Activity, Cpu, BarChart3, Shield, Zap, Database } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Activity, Cpu, BarChart3, ArrowRight } from "lucide-react";
 
-const solutions = [
+const coreSolutions = [
   {
     icon: Activity,
     title: "설비 진동 모니터링",
-    description: "진동 센서를 통해 회전 기계의 이상 징후를 조기에 감지하고 예측 정비를 지원합니다.",
+    description: "설비 이상 징후를 조기에 감지하여 예기치 않은 가동 중단과 수리 비용을 줄입니다.",
+    anchor: "vibration-monitoring",
     features: ["실시간 진동 분석", "이상 패턴 감지", "정비 알림"],
   },
   {
     icon: Cpu,
     title: "디지털 트윈",
-    description: "물리적 설비를 가상 환경에 구현하여 시뮬레이션 및 최적화 분석을 수행합니다.",
-    features: ["3D 시각화", "시뮬레이션 분석", "운영 최적화"],
+    description: "현장 데이터를 기반으로 설비 상태를 시각화하고, 운영 판단에 필요한 정보를 제공합니다.",
+    anchor: "digital-twin",
+    features: ["상태 시각화", "시뮬레이션 분석", "운영 판단 지원"],
   },
   {
     icon: BarChart3,
     title: "데이터 분석 플랫폼",
-    description: "수집된 센싱 데이터를 통합 관리하고 인사이트를 도출하는 분석 플랫폼입니다.",
+    description: "분산된 현장 데이터를 통합하여 일관된 기준으로 분석하고 의사결정을 돕습니다.",
+    anchor: "data-platform",
     features: ["대시보드 제공", "리포트 자동화", "트렌드 분석"],
-  },
-  {
-    icon: Shield,
-    title: "안전 관리 시스템",
-    description: "작업 환경의 위험 요소를 모니터링하고 사고 예방을 위한 경보를 제공합니다.",
-    features: ["가스 누출 감지", "환경 모니터링", "비상 알림"],
-  },
-  {
-    icon: Zap,
-    title: "에너지 모니터링",
-    description: "설비별 에너지 사용량을 측정하고 효율화 방안을 제시합니다.",
-    features: ["전력 사용 분석", "비용 절감 제안", "탄소 배출 추적"],
-  },
-  {
-    icon: Database,
-    title: "통합 데이터 허브",
-    description: "다양한 센서와 시스템의 데이터를 표준화하여 통합 관리합니다.",
-    features: ["프로토콜 변환", "데이터 정규화", "API 연동"],
   },
 ];
 
@@ -56,12 +42,13 @@ const SolutionsSection = () => {
           </p>
         </div>
 
-        {/* Solutions Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {solutions.map((solution, index) => (
-            <div
+        {/* Core Solutions Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+          {coreSolutions.map((solution, index) => (
+            <Link
               key={solution.title}
-              className="group bg-card rounded-xl border border-border p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+              to={`/solutions#${solution.anchor}`}
+              className="group bg-card rounded-xl border border-border p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-industrial/30"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Icon */}
@@ -70,8 +57,9 @@ const SolutionsSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center justify-between">
                 {solution.title}
+                <ArrowRight size={18} className="text-muted-foreground group-hover:text-industrial group-hover:translate-x-1 transition-all" />
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 {solution.description}
@@ -88,8 +76,19 @@ const SolutionsSection = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        {/* View All Solutions Link */}
+        <div className="text-center">
+          <Link
+            to="/solutions"
+            className="inline-flex items-center gap-2 text-industrial hover:text-industrial-dark font-medium transition-colors"
+          >
+            모든 솔루션 보기
+            <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>
