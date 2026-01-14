@@ -20,13 +20,12 @@ const DigitalTwinSummary = () => {
               DIGITAL TWIN
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-              디지털 트윈을 통한 운영 판단 지원
+              운영 판단을 돕는 디지털 트윈
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              sentia의 디지털 트윈은 현장에서 수집된 센싱 데이터를 기반으로 
-              설비 상태를 시각화하고, 운영 의사결정에 필요한 정보를 제공합니다. 
-              복잡한 기술 구현보다는 현장에서 실제로 활용할 수 있는 
-              실용적인 도구로서 설계되었습니다.
+              현장 데이터를 기반으로 설비 상태를 시각화하고, 
+              운영 조건 변경 전 예상 결과를 미리 검토할 수 있도록 지원합니다. 
+              경험에만 의존하던 판단을 데이터 기반으로 보완합니다.
             </p>
 
             {/* Key Value Props */}
