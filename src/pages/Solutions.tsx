@@ -78,33 +78,28 @@ const solutionSteps = [
 const features = [
   {
     icon: Settings,
-    title: "산업용 센서 및 디바이스 관리",
-    description: "다양한 산업 환경에 적합한 센서와 통합 디바이스 관리 기능을 제공합니다.",
+    title: "현장 조건에 맞춘 센싱 구성",
+    description: "설비 종류, 환경 특성, 측정 목적에 따라 센서와 디바이스를 유연하게 구성할 수 있습니다.",
   },
   {
     icon: Radio,
-    title: "유선/무선 통신 옵션",
-    description: "현장 환경에 따라 유선 및 무선 통신 방식을 유연하게 선택하여 구성할 수 있습니다.",
+    title: "안정적인 데이터 전송과 연결",
+    description: "유선·무선 통신 방식을 현장 여건에 맞게 선택하여 끊김 없는 데이터 수집 환경을 구축합니다.",
   },
   {
     icon: LayoutDashboard,
-    title: "실시간 모니터링 대시보드",
-    description: "직관적인 대시보드를 통해 설비 상태를 한눈에 파악하고 모니터링합니다.",
-  },
-  {
-    icon: Bell,
-    title: "임계값 기반 알림 및 이력 관리",
-    description: "사용자 정의 임계값에 따른 알림과 인시던트 추적 기능을 제공합니다.",
+    title: "한눈에 파악하는 현장 상태",
+    description: "직관적인 대시보드를 통해 설비와 환경 상태를 실시간으로 확인하고 이상 징후를 빠르게 인지합니다.",
   },
   {
     icon: FileText,
-    title: "데이터 이력 및 리포팅",
-    description: "수집된 데이터의 이력을 저장하고 분석 리포트를 생성합니다.",
+    title: "운영 기록 기반의 이력 관리",
+    description: "수집된 데이터와 알림 이력을 저장하여 분석, 보고, 개선 활동에 활용할 수 있습니다.",
   },
   {
     icon: Link2,
-    title: "시스템 연동 (API)",
-    description: "MES, ERP, SCADA 등 기존 시스템과의 API 연동을 지원합니다.",
+    title: "유연한 시스템 연동(API)",
+    description: "MES, ERP, SCADA 등 기존 시스템과 연동하여 데이터 활용 범위를 확장할 수 있습니다.",
   },
 ];
 
@@ -347,6 +342,28 @@ const Solutions = () => {
         {/* Digital Twin Summary */}
         <DigitalTwinSummary />
 
+        {/* Mid CTA after Digital Twin */}
+        <section className="py-12 bg-background">
+          <div className="container-narrow section-padding">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-xl border border-industrial/20 bg-industrial/5">
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">
+                  우리 현장에 어떻게 적용할 수 있을까요?
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  현장 조건과 목표에 맞는 구성 방안을 함께 검토해 드립니다.
+                </p>
+              </div>
+              <Link to="/consultation">
+                <Button variant="outline" className="whitespace-nowrap group">
+                  상담 요청하기
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
@@ -361,7 +378,7 @@ const Solutions = () => {
                   현장에 맞는 솔루션을 찾고 계신가요?
                 </h2>
                 <p className="text-lg text-primary-foreground/80 mb-8">
-                  현장 환경과 요구사항을 분석하여 최적의 모니터링 구성을 제안해 드립니다.
+                  현장 환경을 분석해 최적의 모니터링 구성을 제안해 드립니다.
                 </p>
                 <Link to="/consultation">
                   <Button variant="hero" size="xl">
