@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
@@ -159,6 +160,84 @@ const securityFeatures = [
   },
 ];
 
+// Implementation Section Component with scroll animation
+const ImplementationSection = ({ steps }: { steps: typeof implementationSteps }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.impl-step-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('impl-step-visible');
+              }, index * 100);
+            });
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section className="py-20 bg-background" ref={sectionRef}>
+      <div className="container-narrow section-padding">
+        <div className="max-w-3xl mb-12">
+          <span className="inline-block text-sm font-medium text-industrial mb-4">IMPLEMENTATION</span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            도입 프로세스
+          </h2>
+          <p className="text-muted-foreground">
+            체계적인 단계별 접근을 통해 안정적으로 솔루션을 도입합니다.
+          </p>
+        </div>
+
+        {/* Connecting line for visual flow */}
+        <div className="relative">
+          <div className="absolute left-[2.25rem] top-8 bottom-8 w-px bg-gradient-to-b from-industrial/20 via-industrial/40 to-industrial/20 hidden sm:block" />
+          
+          <div className="space-y-4">
+            {steps.map((item, index) => (
+              <div
+                key={item.step}
+                className="impl-step-card opacity-0 translate-y-4 transition-all duration-500 ease-out flex items-start gap-6 p-6 rounded-xl bg-card border border-border hover:shadow-md hover:border-industrial/20 group relative"
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                {/* Step indicator with subtle pulse on hover */}
+                <div className="flex items-center gap-4 relative z-10">
+                  <span className="text-3xl font-bold text-industrial transition-transform duration-200 group-hover:scale-105">
+                    {item.step}
+                  </span>
+                  <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center transition-all duration-200 group-hover:bg-industrial/15 group-hover:shadow-sm">
+                    <item.icon size={24} className="text-industrial" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-foreground mb-1 transition-colors duration-200 group-hover:text-industrial">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </div>
+                {/* Subtle left border accent */}
+                <div className="absolute left-0 top-4 bottom-4 w-0.5 bg-industrial/0 group-hover:bg-industrial/30 transition-all duration-200 rounded-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Solutions = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -275,39 +354,7 @@ const Solutions = () => {
         </section>
 
         {/* Section 4: Implementation Process */}
-        <section className="py-20 bg-background">
-          <div className="container-narrow section-padding">
-            <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial mb-4">IMPLEMENTATION</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                도입 프로세스
-              </h2>
-              <p className="text-muted-foreground">
-                체계적인 단계별 접근을 통해 안정적으로 솔루션을 도입합니다.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {implementationSteps.map((item, index) => (
-                <div
-                  key={item.step}
-                  className="flex items-start gap-6 p-6 rounded-xl bg-card border border-border"
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="text-3xl font-bold text-industrial">{item.step}</span>
-                    <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center">
-                      <item.icon size={24} className="text-industrial" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ImplementationSection steps={implementationSteps} />
 
         {/* Mid CTA after Implementation */}
         <section className="py-12 bg-muted/30">
