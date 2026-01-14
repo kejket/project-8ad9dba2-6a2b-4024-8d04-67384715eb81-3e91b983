@@ -275,14 +275,14 @@ const Solutions = () => {
         </section>
 
         {/* Section 4: Implementation Process */}
-        <section className="py-20 bg-navy text-primary-foreground">
+        <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial-light mb-4">IMPLEMENTATION</span>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              <span className="inline-block text-sm font-medium text-industrial mb-4">IMPLEMENTATION</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 도입 프로세스
               </h2>
-              <p className="text-primary-foreground/70">
+              <p className="text-muted-foreground">
                 체계적인 단계별 접근을 통해 안정적으로 솔루션을 도입합니다.
               </p>
             </div>
@@ -291,20 +291,42 @@ const Solutions = () => {
               {implementationSteps.map((item, index) => (
                 <div
                   key={item.step}
-                  className="flex items-start gap-6 p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10"
+                  className="flex items-start gap-6 p-6 rounded-xl bg-card border border-border"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-3xl font-bold text-industrial-light">{item.step}</span>
-                    <div className="w-12 h-12 rounded-lg bg-industrial/20 flex items-center justify-center">
-                      <item.icon size={24} className="text-industrial-light" />
+                    <span className="text-3xl font-bold text-industrial">{item.step}</span>
+                    <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center">
+                      <item.icon size={24} className="text-industrial" />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-primary-foreground/70">{item.description}</p>
+                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mid CTA after Implementation */}
+        <section className="py-12 bg-muted/30">
+          <div className="container-narrow section-padding">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-xl border border-border bg-card shadow-sm">
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">
+                  우리 현장에 어떻게 적용할 수 있을까요?
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  현장 조건과 목표에 맞는 구성 방안을 함께 검토해 드립니다.
+                </p>
+              </div>
+              <Link to="/consultation">
+                <Button className="whitespace-nowrap group bg-industrial hover:bg-industrial-dark text-white">
+                  상담 요청하기
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -342,51 +364,23 @@ const Solutions = () => {
         {/* Digital Twin Summary */}
         <DigitalTwinSummary />
 
-        {/* Mid CTA after Digital Twin */}
-        <section className="py-12 bg-background">
+        {/* Bottom CTA Section */}
+        <section className="py-20 bg-muted/30">
           <div className="container-narrow section-padding">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-xl border border-industrial/20 bg-industrial/5">
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">
-                  우리 현장에 어떻게 적용할 수 있을까요?
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  현장 조건과 목표에 맞는 구성 방안을 함께 검토해 드립니다.
-                </p>
-              </div>
+            <div className="text-center max-w-2xl mx-auto p-10 rounded-2xl border border-border bg-card shadow-sm">
+              <Shield size={40} className="mx-auto mb-6 text-industrial" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                현장에 맞는 솔루션을 찾고 계신가요?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                현장 환경을 분석해 최적의 모니터링 구성을 제안해 드립니다.
+              </p>
               <Link to="/consultation">
-                <Button variant="outline" className="whitespace-nowrap group">
-                  상담 요청하기
-                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <Button size="lg" className="bg-industrial hover:bg-industrial-dark text-white">
+                  현장 진단 및 상담 요청
+                  <ArrowRight size={18} className="ml-2" />
                 </Button>
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-background">
-          <div className="container-narrow section-padding">
-            <div className="relative overflow-hidden rounded-2xl gradient-hero p-8 sm:p-12 lg:p-16">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-industrial rounded-full blur-3xl" />
-              </div>
-
-              <div className="relative z-10 text-center max-w-2xl mx-auto">
-                <Shield size={48} className="mx-auto mb-6 text-industrial-light" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
-                  현장에 맞는 솔루션을 찾고 계신가요?
-                </h2>
-                <p className="text-lg text-primary-foreground/80 mb-8">
-                  현장 환경을 분석해 최적의 모니터링 구성을 제안해 드립니다.
-                </p>
-                <Link to="/consultation">
-                  <Button variant="hero" size="xl">
-                    현장 진단 및 상담 요청
-                    <ArrowRight size={20} />
-                  </Button>
-                </Link>
-              </div>
             </div>
           </div>
         </section>
