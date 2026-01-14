@@ -4,24 +4,21 @@ import { Activity, Cpu, BarChart3, ArrowRight } from "lucide-react";
 const coreSolutions = [
   {
     icon: Activity,
-    title: "설비 진동 모니터링",
-    description: "설비 이상 징후를 조기에 감지하여 예기치 않은 가동 중단과 수리 비용을 줄입니다.",
-    anchor: "vibration-monitoring",
-    features: ["실시간 진동 분석", "이상 패턴 감지", "정비 알림"],
+    title: "설비 이상 조기 감지",
+    description: "설비 상태 변화를 지속적으로 감지해 이상 징후를 조기에 인지하고, 계획되지 않은 정지와 손실을 줄일 수 있도록 지원합니다.",
+    features: ["상태 변화 감지", "조기 경보", "손실 예방"],
   },
   {
     icon: Cpu,
-    title: "디지털 트윈",
-    description: "현장 데이터를 기반으로 설비 상태를 시각화하고, 운영 판단에 필요한 정보를 제공합니다.",
-    anchor: "digital-twin",
-    features: ["상태 시각화", "시뮬레이션 분석", "운영 판단 지원"],
+    title: "운영 판단을 돕는 디지털 트윈",
+    description: "현장 데이터를 기반으로 운영 변경의 영향을 사전에 검토해, 경험에 의존하던 판단을 데이터 기반으로 보조합니다.",
+    features: ["사전 영향 검토", "데이터 기반 판단", "운영 최적화"],
   },
   {
     icon: BarChart3,
-    title: "데이터 분석 플랫폼",
-    description: "분산된 현장 데이터를 통합하여 일관된 기준으로 분석하고 의사결정을 돕습니다.",
-    anchor: "data-platform",
-    features: ["대시보드 제공", "리포트 자동화", "트렌드 분석"],
+    title: "현장 데이터를 한눈에 관리",
+    description: "분산된 설비·환경 데이터를 통합해 현장 상태를 직관적으로 파악하고, 운영 기준과 개선 활동을 지속할 수 있도록 지원합니다.",
+    features: ["데이터 통합", "직관적 현황 파악", "지속적 개선"],
   },
 ];
 
@@ -47,7 +44,7 @@ const SolutionsSection = () => {
           {coreSolutions.map((solution, index) => (
             <Link
               key={solution.title}
-              to={`/solutions#${solution.anchor}`}
+              to="/solutions"
               className="group bg-card rounded-xl border border-border p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-industrial/30"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
