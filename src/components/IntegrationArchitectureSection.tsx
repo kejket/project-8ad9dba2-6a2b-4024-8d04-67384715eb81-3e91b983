@@ -55,7 +55,7 @@ const integrationFeatures = [
 
 const IntegrationArchitectureSection = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-background">
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="max-w-4xl mb-16">
@@ -63,7 +63,8 @@ const IntegrationArchitectureSection = () => {
             SYSTEM ARCHITECTURE
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
-            하드웨어와 소프트웨어의<br />통합 구조
+            <span className="block">하드웨어와 소프트웨어의</span>
+            <span className="block">통합 구조</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             센서 모듈에서 수집된 데이터는 소프트웨어 플랫폼과 유기적으로 연동되어 
@@ -71,29 +72,31 @@ const IntegrationArchitectureSection = () => {
           </p>
         </div>
 
-        {/* Architecture Diagram - Concept Summary Style */}
+        {/* Architecture Diagram */}
         <div className="bg-card rounded-xl border border-border p-8 lg:p-10 mb-12">
           <h3 className="text-lg font-semibold text-foreground mb-8 text-center">
-            기술 레이어 개요
+            데이터 흐름 아키텍처
           </h3>
           
           {/* Desktop View */}
-          <div className="hidden lg:flex items-stretch justify-between gap-6">
+          <div className="hidden lg:flex items-center justify-between gap-4">
             {architectureLayers.map((layer, index) => (
               <div key={layer.id} className="flex items-center gap-4 flex-1">
-                <div className="flex-1 text-center p-4 rounded-lg border border-border bg-background hover:border-industrial/30 hover:shadow-sm transition-all duration-200">
-                  <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mb-4 mx-auto">
-                    <layer.icon className="w-6 h-6 text-industrial" />
+                <div className="flex-1 text-center">
+                  <div className={`w-16 h-16 rounded-xl ${layer.color} flex items-center justify-center mb-4 mx-auto`}>
+                    <layer.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-1 text-sm">{layer.title}</h4>
-                  <p className="text-xs text-industrial font-medium mb-2">{layer.subtitle}</p>
+                  <h4 className="font-semibold text-foreground mb-1">{layer.title}</h4>
+                  <p className="text-sm text-industrial font-medium mb-2">{layer.subtitle}</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {layer.description}
                   </p>
                 </div>
                 {index < architectureLayers.length - 1 && (
                   <div className="flex items-center">
-                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                    <div className="w-8 h-0.5 bg-border" />
+                    <ArrowRight className="w-5 h-5 text-industrial" />
+                    <div className="w-8 h-0.5 bg-border" />
                   </div>
                 )}
               </div>
@@ -101,22 +104,22 @@ const IntegrationArchitectureSection = () => {
           </div>
 
           {/* Mobile View */}
-          <div className="lg:hidden space-y-4">
+          <div className="lg:hidden space-y-6">
             {architectureLayers.map((layer, index) => (
               <div key={layer.id}>
-                <div className="flex items-start gap-4 p-4 rounded-lg border border-border bg-background">
-                  <div className="w-10 h-10 rounded-lg bg-industrial/10 flex items-center justify-center flex-shrink-0">
-                    <layer.icon className="w-5 h-5 text-industrial" />
+                <div className="flex items-start gap-4">
+                  <div className={`w-12 h-12 rounded-lg ${layer.color} flex items-center justify-center flex-shrink-0`}>
+                    <layer.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-sm">{layer.title}</h4>
-                    <p className="text-xs text-industrial font-medium mb-1">{layer.subtitle}</p>
-                    <p className="text-xs text-muted-foreground">{layer.description}</p>
+                    <h4 className="font-semibold text-foreground">{layer.title}</h4>
+                    <p className="text-sm text-industrial font-medium mb-1">{layer.subtitle}</p>
+                    <p className="text-sm text-muted-foreground">{layer.description}</p>
                   </div>
                 </div>
                 {index < architectureLayers.length - 1 && (
-                  <div className="flex justify-center my-2">
-                    <ArrowRight className="w-4 h-4 text-muted-foreground rotate-90" />
+                  <div className="flex justify-start ml-6 my-4">
+                    <div className="w-0.5 h-8 bg-border" />
                   </div>
                 )}
               </div>
@@ -124,20 +127,20 @@ const IntegrationArchitectureSection = () => {
           </div>
         </div>
 
-        {/* Integration Features - Light background */}
+        {/* Integration Features */}
         <div className="grid md:grid-cols-3 gap-6">
           {integrationFeatures.map((feature) => (
             <div 
               key={feature.title} 
-              className="bg-card rounded-xl border border-border p-6 hover:border-industrial/30 hover:shadow-sm transition-all duration-200"
+              className="bg-navy rounded-xl p-6"
             >
-              <div className="w-10 h-10 rounded-lg bg-industrial/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-5 h-5 text-industrial" />
+              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+                <feature.icon className="w-5 h-5 text-industrial-light" />
               </div>
-              <h4 className="text-foreground font-semibold mb-2">
+              <h4 className="text-primary-foreground font-semibold mb-2">
                 {feature.title}
               </h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-primary-foreground/70 text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>

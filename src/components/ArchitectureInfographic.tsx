@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { 
   Radio, 
   Router, 
@@ -7,6 +6,7 @@ import {
   BarChart3, 
   Bell, 
   Cpu,
+  ArrowRight,
   ChevronRight
 } from "lucide-react";
 
@@ -63,40 +63,8 @@ const architectureSteps = [
 ];
 
 const ArchitectureInfographic = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            // Sequential activation with delay
-            architectureSteps.forEach((_, index) => {
-              setTimeout(() => {
-                setActiveIndex(index);
-              }, index * 300);
-            });
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
   return (
-    <div 
-      ref={containerRef}
-      className="w-full bg-card rounded-2xl border border-border p-6 lg:p-10 overflow-hidden"
-    >
+    <div className="w-full bg-gradient-to-br from-background via-secondary/30 to-background rounded-2xl border border-border p-6 lg:p-10 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-10">
         <span className="inline-block text-xs font-medium text-industrial uppercase tracking-wider mb-2">
@@ -113,79 +81,47 @@ const ArchitectureInfographic = () => {
       {/* Desktop Flow - Horizontal */}
       <div className="hidden lg:block">
         <div className="relative">
-          {/* Connection Line - animated fill */}
-          <div className="absolute top-16 left-[8%] right-[8%] h-0.5 bg-border overflow-hidden">
-            <div 
-              className="h-full bg-industrial transition-all duration-1000 ease-out"
-              style={{ 
-                width: activeIndex >= 0 ? `${((activeIndex + 1) / architectureSteps.length) * 100}%` : '0%'
-              }}
-            />
-          </div>
+          {/* Connection Line */}
+          <div className="absolute top-16 left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-industrial/20 via-industrial to-industrial/20" />
           
           {/* Steps */}
           <div className="relative grid grid-cols-7 gap-2">
-            {architectureSteps.map((step, index) => {
-              const isActive = index <= activeIndex;
-              const isCurrentlyActivating = index === activeIndex;
-              
-              return (
-                <div key={step.id} className="relative flex flex-col items-center">
-                  {/* Icon Container */}
-                  <div 
-                    className={`
-                      relative z-10 w-14 h-14 rounded-xl border-2 flex items-center justify-center shadow-lg
-                      transition-all duration-500 ease-out
-                      ${isActive 
-                        ? 'bg-industrial border-industrial shadow-industrial/20' 
-                        : 'bg-card border-border'
-                      }
-                      ${isCurrentlyActivating ? 'scale-110' : 'scale-100'}
-                    `}
-                  >
-                    <step.icon 
-                      size={24} 
-                      className={`transition-colors duration-500 ${isActive ? 'text-white' : 'text-muted-foreground'}`}
-                    />
-                  </div>
-
-                  {/* Arrow - animated */}
-                  {index < architectureSteps.length - 1 && (
-                    <div 
-                      className={`
-                        absolute top-16 -right-1 z-20
-                        transition-all duration-300 ease-out
-                        ${index < activeIndex ? 'opacity-100 translate-x-0' : 'opacity-30 -translate-x-1'}
-                      `}
-                      style={{ transitionDelay: `${index * 50}ms` }}
-                    >
-                      <ChevronRight 
-                        size={16} 
-                        className={`transition-colors duration-300 ${index < activeIndex ? 'text-industrial' : 'text-muted-foreground'}`}
-                      />
-                    </div>
+            {architectureSteps.map((step, index) => (
+              <div key={step.id} className="relative flex flex-col items-center">
+                {/* Icon Container */}
+                <div className="relative z-10 w-14 h-14 rounded-xl bg-card border-2 border-industrial/30 flex items-center justify-center shadow-lg hover:border-industrial hover:shadow-xl transition-all duration-300 group">
+                  <step.icon 
+                    size={24} 
+                    className="text-industrial group-hover:scale-110 transition-transform" 
+                  />
+                  
+                  {/* Pulse animation for first and last */}
+                  {(index === 0 || index === architectureSteps.length - 1) && (
+                    <div className="absolute inset-0 rounded-xl border-2 border-industrial/50 animate-ping opacity-30" />
                   )}
-
-                  {/* Content */}
-                  <div 
-                    className={`
-                      mt-4 text-center transition-all duration-500 ease-out
-                      ${isActive ? 'opacity-100 translate-y-0' : 'opacity-50 translate-y-2'}
-                    `}
-                  >
-                    <p className={`text-sm font-semibold leading-tight transition-colors duration-300 ${isActive ? 'text-foreground' : 'text-muted-foreground'}`}>
-                      {step.title}
-                    </p>
-                    <p className={`text-[10px] uppercase tracking-wide mt-0.5 transition-colors duration-300 ${isActive ? 'text-industrial' : 'text-muted-foreground'}`}>
-                      {step.subtitle}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
                 </div>
-              );
-            })}
+
+                {/* Arrow */}
+                {index < architectureSteps.length - 1 && (
+                  <div className="absolute top-16 -right-1 z-20">
+                    <ChevronRight size={16} className="text-industrial" />
+                  </div>
+                )}
+
+                {/* Content */}
+                <div className="mt-4 text-center">
+                  <p className="text-sm font-semibold text-foreground leading-tight">
+                    {step.title}
+                  </p>
+                  <p className="text-[10px] text-industrial uppercase tracking-wide mt-0.5">
+                    {step.subtitle}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -193,71 +129,55 @@ const ArchitectureInfographic = () => {
       {/* Mobile/Tablet Flow - Vertical */}
       <div className="lg:hidden">
         <div className="relative">
-          {/* Vertical Line - animated fill */}
-          <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-border overflow-hidden">
-            <div 
-              className="w-full bg-industrial transition-all duration-1000 ease-out"
-              style={{ 
-                height: activeIndex >= 0 ? `${((activeIndex + 1) / architectureSteps.length) * 100}%` : '0%'
-              }}
-            />
-          </div>
+          {/* Vertical Line */}
+          <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-gradient-to-b from-industrial via-industrial/50 to-industrial" />
 
           {/* Steps */}
           <div className="space-y-6">
-            {architectureSteps.map((step, index) => {
-              const isActive = index <= activeIndex;
-              
-              return (
-                <div 
-                  key={step.id} 
-                  className={`
-                    relative flex items-start gap-4
-                    transition-all duration-500 ease-out
-                    ${isActive ? 'opacity-100 translate-x-0' : 'opacity-50 translate-x-2'}
-                  `}
-                >
-                  {/* Icon */}
-                  <div 
-                    className={`
-                      relative z-10 w-14 h-14 rounded-xl border-2 flex items-center justify-center shadow-md flex-shrink-0
-                      transition-all duration-500
-                      ${isActive ? 'bg-industrial border-industrial' : 'bg-card border-border'}
-                    `}
-                  >
-                    <step.icon 
-                      size={22} 
-                      className={`transition-colors duration-300 ${isActive ? 'text-white' : 'text-muted-foreground'}`}
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 pt-2">
-                    <div className="flex items-baseline gap-2">
-                      <p className={`text-sm font-semibold transition-colors duration-300 ${isActive ? 'text-foreground' : 'text-muted-foreground'}`}>
-                        {step.title}
-                      </p>
-                      <span className={`text-[10px] uppercase transition-colors duration-300 ${isActive ? 'text-industrial' : 'text-muted-foreground'}`}>
-                        {step.subtitle}
-                      </span>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {step.description}
-                    </p>
-                  </div>
+            {architectureSteps.map((step, index) => (
+              <div key={step.id} className="relative flex items-start gap-4">
+                {/* Icon */}
+                <div className="relative z-10 w-14 h-14 rounded-xl bg-card border-2 border-industrial/30 flex items-center justify-center shadow-md flex-shrink-0">
+                  <step.icon size={22} className="text-industrial" />
                 </div>
-              );
-            })}
+
+                {/* Content */}
+                <div className="flex-1 pt-2">
+                  <div className="flex items-baseline gap-2">
+                    <p className="text-sm font-semibold text-foreground">
+                      {step.title}
+                    </p>
+                    <span className="text-[10px] text-industrial uppercase">
+                      {step.subtitle}
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {step.description}
+                  </p>
+                </div>
+
+                {/* Arrow for mobile */}
+                {index < architectureSteps.length - 1 && (
+                  <div className="absolute left-[26px] -bottom-3 z-20">
+                    <ArrowRight size={12} className="text-industrial rotate-90" />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Data Flow Indicators - simplified */}
+      {/* Data Flow Indicators */}
       <div className="mt-10 pt-6 border-t border-border">
         <div className="flex flex-wrap justify-center gap-6 text-xs">
           <div className="flex items-center gap-2">
             <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-industrial to-transparent" />
             <span className="text-muted-foreground">데이터 흐름</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full border-2 border-industrial bg-card animate-pulse" />
+            <span className="text-muted-foreground">실시간 처리</span>
           </div>
           <div className="flex items-center gap-2">
             <Lock size={12} className="text-industrial" />
