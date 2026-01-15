@@ -50,7 +50,7 @@ const features = [
 
 const SensorModulesSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="sensor-modules" className="py-20 bg-background">
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="max-w-6xl mb-16">
@@ -80,7 +80,7 @@ const SensorModulesSection = () => {
           </div>
         </div>
 
-        {/* Patent Info */}
+        {/* Technology Assets Info */}
         <div className="bg-navy/5 border border-border rounded-xl p-6 mb-12">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center flex-shrink-0">
@@ -88,11 +88,11 @@ const SensorModulesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-2">
-                30종 이상의 센서 모듈 특허 보유
+                검증된 기술 자산 기반 설계
               </h3>
               <p className="text-muted-foreground">
-                sentia는 산업 현장의 다양한 측정 요구를 충족하기 위해 30종 이상의 센서 모듈에 대한 
-                특허 기술을 보유하고 있으며, 현장 조건에 따라 유연하게 적용 가능합니다.
+                센서 모듈 관련 기술 자산과 검증된 현장 적용 경험을 바탕으로 솔루션을 설계합니다.
+                현장 조건에 따라 유연하게 적용 가능합니다.
               </p>
             </div>
           </div>
