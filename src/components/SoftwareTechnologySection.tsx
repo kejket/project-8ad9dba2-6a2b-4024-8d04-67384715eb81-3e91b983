@@ -41,7 +41,7 @@ const capabilities = [
 
 const SoftwareTechnologySection = () => {
   return (
-    <section className="py-20 gradient-subtle">
+    <section id="software-technology" className="py-20 gradient-subtle">
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="max-w-6xl mb-16">

@@ -74,7 +74,7 @@ const DigitalTwinSection = () => {
             <span className="block">디지털 트윈 기술</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            실제 현장 데이터를 반영한 디지털 모델을 통해 설비 상태를 이해하고 운영 판단을 지원합니다.
+            현장 조건을 고려한 고정밀 동기화 기술로, 신뢰 가능한 운영 판단을 지원합니다.
           </p>
         </div>
 
