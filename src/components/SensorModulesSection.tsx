@@ -36,15 +36,15 @@ const sensorCategories = [
 const features = [
   {
     title: "현장 환경 최적화 설계",
-    description: "설치 환경의 온도, 습도, 분진 조건에 따라 센서 구성을 최적화합니다."
+    description: "현장 조건을 먼저 분석하고, 그에 맞는 센서 구성과 통신 방식을 설계합니다."
   },
   {
     title: "다중 통신 포트 지원",
-    description: "RS-485, Modbus, Ethernet 등 다양한 산업용 통신 프로토콜을 지원합니다."
+    description: "기존 설비의 통신 환경에 맞춰 유연하게 연동할 수 있도록 다양한 프로토콜을 적용합니다."
   },
   {
     title: "안정적 데이터 취득",
-    description: "제조 현장의 전자기 간섭 환경에서도 안정적인 데이터 수집이 가능합니다."
+    description: "전자기 간섭 등 현장 환경에서도 끊김 없는 데이터 흐름을 유지해, 신뢰할 수 있는 운영 판단을 지원합니다."
   }
 ];
 
