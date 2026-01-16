@@ -66,7 +66,7 @@ const SensorModulesSection = () => {
             {/* Text Content */}
             <div className="flex-1 lg:w-3/5">
               <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">
-                SENSOR TECHNOLOGY
+                <span translate="no">SENSOR TECHNOLOGY</span>
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
                 <span className="block">센서 모듈 및 통신 포트</span>

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Cpu, Wifi, Server, Monitor, ArrowRight, Database, Shield } from "lucide-react";
 
 const architectureLayers = [
@@ -54,13 +55,70 @@ const integrationFeatures = [
 ];
 
 const IntegrationArchitectureSection = () => {
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const architectureRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const iconContainers = entry.target.querySelectorAll('.feature-icon-container');
+            iconContainers.forEach((container, index) => {
+              setTimeout(() => {
+                container.classList.add('icon-border-animate');
+              }, index * 200);
+            });
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (featuresRef.current) {
+      observer.observe(featuresRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const layerIcons = entry.target.querySelectorAll('.architecture-layer-icon');
+            layerIcons.forEach((icon, index) => {
+              setTimeout(() => {
+                icon.classList.add('layer-icon-animate');
+                // 이전 아이콘은 약간의 효과 유지
+                if (index > 0) {
+                  setTimeout(() => {
+                    layerIcons[index - 1].classList.add('layer-icon-persist');
+                  }, 500);
+                }
+              }, index * 1200); // 느린 속도로 순차적 애니메이션 (1.2초 간격)
+            });
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    if (architectureRef.current) {
+      observer.observe(architectureRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-20 bg-background">
+    <section id="system-architecture" className="py-20 bg-background">
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="max-w-4xl mb-16">
           <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">
-            SYSTEM ARCHITECTURE
+            <span translate="no">SYSTEM ARCHITECTURE</span>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
             <span className="block">하드웨어와 소프트웨어의</span>
@@ -73,7 +131,7 @@ const IntegrationArchitectureSection = () => {
         </div>
 
         {/* Architecture Diagram */}
-        <div className="bg-card rounded-xl border border-border p-8 lg:p-10 mb-12">
+        <div ref={architectureRef} className="bg-card rounded-xl border border-border p-8 lg:p-10 mb-12">
           <h3 className="text-lg font-semibold text-foreground mb-8 text-center">
             데이터 흐름 아키텍처
           </h3>
@@ -83,7 +141,7 @@ const IntegrationArchitectureSection = () => {
             {architectureLayers.map((layer, index) => (
               <div key={layer.id} className="flex items-center gap-4 flex-1">
                 <div className="flex-1 text-center">
-                  <div className={`w-16 h-16 rounded-xl ${layer.color} flex items-center justify-center mb-4 mx-auto`}>
+                  <div className={`architecture-layer-icon w-16 h-16 rounded-xl ${layer.color} flex items-center justify-center mb-4 mx-auto transition-all duration-[2000ms] ease-in-out`}>
                     <layer.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">{layer.title}</h4>
@@ -108,7 +166,7 @@ const IntegrationArchitectureSection = () => {
             {architectureLayers.map((layer, index) => (
               <div key={layer.id}>
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 rounded-lg ${layer.color} flex items-center justify-center flex-shrink-0`}>
+                  <div className={`architecture-layer-icon w-12 h-12 rounded-lg ${layer.color} flex items-center justify-center flex-shrink-0 transition-all duration-[2000ms] ease-in-out`}>
                     <layer.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
@@ -128,13 +186,13 @@ const IntegrationArchitectureSection = () => {
         </div>
 
         {/* Integration Features */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={featuresRef} className="grid md:grid-cols-3 gap-6">
           {integrationFeatures.map((feature) => (
             <div 
               key={feature.title} 
               className="bg-navy rounded-xl p-6"
             >
-              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4">
+              <div className="feature-icon-container w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4 border-2 border-white/10 transition-all duration-[3000ms] ease-in-out">
                 <feature.icon className="w-5 h-5 text-industrial-light" />
               </div>
               <h4 className="text-primary-foreground font-semibold mb-2">

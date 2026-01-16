@@ -67,7 +67,7 @@ const DigitalTwinSection = () => {
         {/* Section Header */}
         <div className="max-w-4xl mb-16">
           <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">
-            DIGITAL TWIN
+              <span translate="no">DIGITAL TWIN</span>
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
             <span className="block">센싱 데이터 기반</span>

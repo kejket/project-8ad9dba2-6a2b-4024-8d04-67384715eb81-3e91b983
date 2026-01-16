@@ -7,18 +7,21 @@ const coreSolutions = [
     title: "설비 이상 조기 감지",
     description: "설비 상태 변화를 지속적으로 감지해 이상 징후를 조기에 인지하고, 계획되지 않은 정지와 손실을 줄일 수 있도록 지원합니다.",
     features: ["상태 변화 감지", "조기 경보", "손실 예방"],
+    link: "/solutions#challenges",
   },
   {
     icon: Cpu,
     title: "운영 판단을 돕는 디지털 트윈",
     description: "현장 데이터를 기반으로 운영 변경의 영향을 사전에 검토해, 경험에 의존하던 판단을 데이터 기반으로 보조합니다.",
     features: ["사전 영향 검토", "데이터 기반 판단", "운영 최적화"],
+    link: "/solutions#digital-twin",
   },
   {
     icon: BarChart3,
     title: "현장 데이터를 한눈에 관리",
     description: "분산된 설비·환경 데이터를 통합해 현장 상태를 직관적으로 파악하고, 운영 기준과 개선 활동을 지속할 수 있도록 지원합니다.",
     features: ["데이터 통합", "직관적 현황 파악", "지속적 개선"],
+    link: "/solutions#core-features",
   },
 ];
 
@@ -28,7 +31,7 @@ const SolutionsSection = () => {
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">SOLUTIONS</span>
+          <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider" translate="no">SOLUTIONS</span>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
             <span className="block sm:inline">현장을 이해하는</span>{" "}
             <span className="block sm:inline">센싱 솔루션</span>
@@ -44,7 +47,7 @@ const SolutionsSection = () => {
           {coreSolutions.map((solution, index) => (
             <Link
               key={solution.title}
-              to="/solutions"
+              to={solution.link}
               className="group bg-card rounded-xl border border-border p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-industrial/30"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -54,9 +57,8 @@ const SolutionsSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-foreground mb-2 flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
                 {solution.title}
-                <ArrowRight size={18} className="text-muted-foreground group-hover:text-industrial group-hover:translate-x-1 transition-all" />
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 {solution.description}
@@ -81,10 +83,13 @@ const SolutionsSection = () => {
         <div className="text-center">
           <Link
             to="/solutions"
-            className="inline-flex items-center gap-2 text-industrial hover:text-industrial-dark font-medium transition-colors"
+            className="group inline-flex items-center gap-2 text-industrial hover:text-industrial-dark font-medium transition-all duration-300 hover:gap-3"
           >
-            모든 솔루션 보기
-            <ArrowRight size={18} />
+            <span className="relative">
+              모든 솔루션 보기
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-industrial-dark group-hover:w-full transition-all duration-300"></span>
+            </span>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
       </div>

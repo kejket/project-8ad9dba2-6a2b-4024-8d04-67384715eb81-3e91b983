@@ -11,14 +11,14 @@ const techPillars = [
   },
   {
     id: "communication",
-    anchor: "sensor-modules",
+    anchor: "software-technology",
     icon: Cpu,
-    title: "안정적인 데이터 수집과 전송",
+    title: "안정적인 데이터 처리와 시스템 구현",
     description: "산업 현장의 다양한 통신 환경을 고려해, 다중 프로토콜 기반의 안정적인 데이터 전송을 지원합니다. 전자기 간섭 환경에서도 신뢰할 수 있는 데이터 흐름을 유지합니다.",
   },
   {
     id: "platform",
-    anchor: "software-technology",
+    anchor: "system-architecture",
     icon: Monitor,
     title: "현장 데이터를 이해 가능한 정보로",
     description: "수집된 데이터를 실시간으로 처리·분석해 운영자가 바로 이해하고 판단할 수 있는 형태로 제공합니다. 대시보드와 알림으로 현장 대응 속도를 높입니다.",
@@ -38,7 +38,7 @@ const TechnologySection = () => {
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-industrial mb-4">TECHNOLOGY</span>
+          <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">TECHNOLOGY</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             데이터 기반 의사결정 지원
           </h2>

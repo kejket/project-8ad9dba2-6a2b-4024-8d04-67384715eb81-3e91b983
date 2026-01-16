@@ -7,7 +7,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block text-sm font-medium text-industrial mb-4">ABOUT SENTIA</span>
+            <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">ABOUT SENTIA</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               사람을 이롭게 하는 기술
             </h2>

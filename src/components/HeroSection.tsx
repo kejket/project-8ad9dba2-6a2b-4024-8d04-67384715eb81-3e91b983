@@ -37,7 +37,8 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg text-primary-foreground/75 mb-10 max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              sentia는 센싱 기술을 기반으로 산업 현장을 정확하게 이해하고, 
+              sentia는 센싱 기술을 기반으로 산업 현장을 정확하게 이해하고,
+              <br />
               그 이해를 신뢰할 수 있는 솔루션으로 구현합니다.
             </p>
 
@@ -58,20 +59,20 @@ const HeroSection = () => {
             {/* Trust Indicators */}
             <div className="mt-14 pt-8 border-t border-primary-foreground/15 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <p className="text-sm text-primary-foreground/50 mb-5 uppercase tracking-wider">신뢰받는 파트너</p>
-              <div className="flex items-center gap-10">
+              <div className="flex items-center gap-8">
                 <div className="text-center">
-                  <p className="text-3xl font-bold">100+</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">도입 현장</p>
+                  <p className="text-xl font-bold tracking-tight" translate="no">Scalable</p>
+                  <p className="text-xs text-primary-foreground/60 mt-1">현장 중심 설계</p>
                 </div>
                 <div className="w-px h-12 bg-primary-foreground/15" />
                 <div className="text-center">
-                  <p className="text-3xl font-bold">99.9%</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">데이터 정확도</p>
+                  <p className="text-xl font-bold tracking-tight" translate="no">Accurate</p>
+                  <p className="text-xs text-primary-foreground/60 mt-1">품질우선</p>
                 </div>
                 <div className="w-px h-12 bg-primary-foreground/15" />
                 <div className="text-center">
-                  <p className="text-3xl font-bold">24/7</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">실시간 모니터링</p>
+                  <p className="text-xl font-bold tracking-tight" translate="no">Always On</p>
+                  <p className="text-xs text-primary-foreground/60 mt-1">상시 운영 대응</p>
                 </div>
               </div>
             </div>

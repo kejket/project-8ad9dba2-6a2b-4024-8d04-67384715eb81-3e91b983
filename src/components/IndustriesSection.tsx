@@ -46,7 +46,7 @@ const IndustriesSection = () => {
       <div className="container-narrow section-padding">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">INDUSTRIES</span>
+          <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider" translate="no">INDUSTRIES</span>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
             다양한 산업 현장에 적용
           </h2>

@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-navy">sentia</span>
+            <span className="text-2xl font-bold text-navy" translate="no">sentia</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,7 +38,8 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  translate="no"
                 >
                   {item.label}
                 </Link>
@@ -47,7 +48,8 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  translate="no"
                 >
                   {item.label}
                 </a>
@@ -57,7 +59,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <Link to="/contact">
-              <Button variant="navy" size="sm">
+              <Button variant="navy" size="sm" translate="no">
                 Contact
               </Button>
             </Link>
@@ -82,8 +84,9 @@ const Header = () => {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                     onClick={() => setIsMenuOpen(false)}
+                    translate="no"
                   >
                     {item.label}
                   </Link>
@@ -92,14 +95,15 @@ const Header = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    translate="no"
                   >
                     {item.label}
                   </a>
                 )
               ))}
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="navy" size="sm" className="w-full mt-2">
+                <Button variant="navy" size="sm" className="w-full mt-2" translate="no">
                   Contact
                 </Button>
               </Link>

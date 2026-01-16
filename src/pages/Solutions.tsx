@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -89,7 +89,7 @@ const features = [
   },
   {
     icon: LayoutDashboard,
-    title: "한눈에 파악하는 현장 상태",
+    title: "현장 데이터를 한눈에 관리",
     description: "직관적인 대시보드를 통해 설비와 환경 상태를 실시간으로 확인하고 이상 징후를 빠르게 인지합니다.",
   },
   {
@@ -192,7 +192,7 @@ const ImplementationSection = ({ steps }: { steps: typeof implementationSteps })
     <section className="py-20 bg-background" ref={sectionRef}>
       <div className="container-narrow section-padding">
         <div className="max-w-3xl mb-12">
-          <span className="inline-block text-sm font-medium text-industrial mb-4">IMPLEMENTATION</span>
+          <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">IMPLEMENTATION</span>
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
             도입 프로세스
           </h2>
@@ -239,6 +239,27 @@ const ImplementationSection = ({ steps }: { steps: typeof implementationSteps })
 };
 
 const Solutions = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      // 요소가 렌더링될 때까지 약간의 지연
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const headerOffset = 80; // 헤더 높이 고려
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    }
+  }, [hash]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -251,16 +272,19 @@ const Solutions = () => {
         />
 
         {/* Section 1: Customer Problems */}
-        <section className="py-20 bg-background">
+        <section id="challenges" className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial mb-4">CHALLENGES</span>
+              <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">CHALLENGES</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 제조 현장이 직면한 과제
               </h2>
               <p className="text-muted-foreground">
                 많은 제조 기업들이 설비 관리와 안전 모니터링에서 
                 다음과 같은 공통된 어려움을 겪고 있습니다.
+              </p>
+              <p className="text-muted-foreground mt-1 leading-tight">
+                sentia는 센싱 기반 이상 징후를 조기에 포착해, 현장에서 즉시 대응할 수 있도록 지원합니다.
               </p>
             </div>
 
@@ -287,7 +311,7 @@ const Solutions = () => {
         <section className="py-20 gradient-subtle">
           <div className="container-narrow section-padding">
             <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial mb-4">SOLUTION OVERVIEW</span>
+              <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">SOLUTION OVERVIEW</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 sentia 솔루션 구성
               </h2>
@@ -324,10 +348,10 @@ const Solutions = () => {
         </section>
 
         {/* Section 3: Core Features */}
-        <section className="py-20 bg-background">
+        <section id="core-features" className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial mb-4">CORE FEATURES</span>
+              <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">CORE FEATURES</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 주요 기능
               </h2>
@@ -340,9 +364,9 @@ const Solutions = () => {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="group p-6 rounded-xl border border-border bg-card hover:shadow-card hover:border-industrial/30 transition-all duration-300"
+                  className="group p-6 rounded-xl border border-border bg-secondary hover:shadow-card hover:border-industrial/30 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-industrial/10 transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-card flex items-center justify-center mb-4 group-hover:bg-card/90 transition-colors">
                     <feature.icon size={24} className="text-industrial" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
@@ -382,7 +406,7 @@ const Solutions = () => {
         <section className="py-20 gradient-subtle">
           <div className="container-narrow section-padding">
             <div className="max-w-3xl mb-12">
-              <span className="inline-block text-sm font-medium text-industrial mb-4">SECURITY</span>
+              <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">SECURITY</span>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                 보안 및 데이터 거버넌스
               </h2>

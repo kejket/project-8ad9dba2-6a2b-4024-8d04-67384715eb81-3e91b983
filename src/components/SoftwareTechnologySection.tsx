@@ -25,7 +25,7 @@ const capabilities = [
   {
     icon: RefreshCw,
     title: "프로그램 수정 및 업데이트 용이성",
-    description: "운영 중 발생하는 요구 사항 변화에 신속하게 대응할 수 있는 구조입니다."
+    description: "운영 중 발생하는 요구 사항 변화에 신속하게 대응할 수 있도록 설계합니다."
   },
   {
     icon: Zap,
@@ -57,7 +57,7 @@ const SoftwareTechnologySection = () => {
             {/* Text Content */}
             <div className="flex-1 lg:w-3/5">
               <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">
-                SOFTWARE TECHNOLOGY
+                <span translate="no">SOFTWARE TECHNOLOGY</span>
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-6 leading-tight">
                 <span className="block">소프트웨어 기술 및</span>

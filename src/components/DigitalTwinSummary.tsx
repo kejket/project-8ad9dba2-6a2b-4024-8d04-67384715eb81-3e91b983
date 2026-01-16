@@ -17,7 +17,7 @@ const DigitalTwinSummary = () => {
           {/* Left: Summary */}
           <div>
             <span className="inline-block text-sm font-medium text-industrial mb-4 tracking-wider">
-              DIGITAL TWIN
+              <span translate="no">DIGITAL TWIN</span>
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
               운영 판단을 돕는 디지털 트윈
