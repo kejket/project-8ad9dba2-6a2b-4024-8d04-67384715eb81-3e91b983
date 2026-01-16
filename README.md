@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# Sentia Works
 
-## Project info
+산업용 센싱 솔루션 전문 기업 Sentia의 공식 웹사이트입니다.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 기술 스택
 
-## How can I edit this code?
+이 프로젝트는 다음 기술로 구축되었습니다:
 
-There are several ways of editing your application.
+- **Vite** - 빠른 빌드 도구
+- **TypeScript** - 타입 안정성
+- **React** - UI 라이브러리
+- **shadcn-ui** - UI 컴포넌트
+- **Tailwind CSS** - 스타일링
+- **React Router** - 라우팅
 
-**Use Lovable**
+## 시작하기
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### 필수 요구사항
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v18 이상 권장)
+- npm 또는 yarn
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### 설치 및 실행
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# 1. 저장소 클론
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# 2. 프로젝트 디렉토리로 이동
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. 의존성 설치
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. 개발 서버 실행
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+개발 서버는 기본적으로 `http://localhost:8080`에서 실행됩니다.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 스크립트
 
-**Use GitHub Codespaces**
+- `npm run dev` - 개발 서버 실행
+- `npm run build` - 프로덕션 빌드
+- `npm run preview` - 빌드 미리보기
+- `npm run lint` - 코드 린팅
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 프로젝트 구조
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # 재사용 가능한 컴포넌트
+├── pages/         # 페이지 컴포넌트
+├── hooks/         # 커스텀 훅
+├── lib/           # 유틸리티 함수
+└── assets/        # 정적 파일 (이미지 등)
+```
 
-This project is built with:
+## 배포
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+프로젝트를 빌드하려면:
 
-## How can I deploy this project?
+```sh
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+빌드된 파일은 `dist/` 디렉토리에 생성됩니다.
