@@ -27,7 +27,10 @@ import {
   Users,
   ScrollText,
   Scale,
-  ArrowRight
+  ArrowRight,
+  Activity,
+  Zap,
+  BarChart3
 } from "lucide-react";
 
 const problems = [
@@ -93,14 +96,42 @@ const features = [
     description: "직관적인 대시보드를 통해 설비와 환경 상태를 실시간으로 확인하고 이상 징후를 빠르게 인지합니다.",
   },
   {
+    icon: Activity,
+    title: "임계값 기반 알림 및 인시던트 추적",
+    description: "사용자 정의 기준에 따라 알림을 발송하고, 발생한 이슈와 대응 내역을 체계적으로 추적할 수 있습니다.",
+  },
+  {
     icon: FileText,
-    title: "운영 기록 기반의 이력 관리",
-    description: "수집된 데이터와 알림 이력을 저장하여 분석, 보고, 개선 활동에 활용할 수 있습니다.",
+    title: "운영 기록 및 리포팅",
+    description: "수집된 데이터와 이벤트 기록을 분석·보고하여 운영 개선과 의사결정에 활용할 수 있습니다.",
   },
   {
     icon: Link2,
     title: "유연한 시스템 연동(API)",
     description: "MES, ERP, SCADA 등 기존 시스템과 연동하여 데이터 활용 범위를 확장할 수 있습니다.",
+  },
+];
+
+const extensionSolutions = [
+  {
+    icon: Shield,
+    title: "안전 관리(옵션)",
+    description: "위험요소 모니터링·사고 예방 알림",
+  },
+  {
+    icon: Zap,
+    title: "에너지 모니터링(옵션)",
+    description: "사용량 측정·효율 개선·비용/탄소 지표",
+  },
+  {
+    icon: Database,
+    title: "통합 데이터 허브(옵션)",
+    description: "다중 시스템 데이터 표준화·연동·통합 관리",
+  },
+  {
+    icon: BarChart3,
+    title: "데이터 분석/리포팅",
+    description: "리포트 자동화·트렌드 분석",
   },
 ];
 
@@ -371,6 +402,36 @@ const Solutions = () => {
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3.5: Extension Solutions */}
+        <section className="py-20 gradient-subtle">
+          <div className="container-narrow section-padding">
+            <div className="max-w-3xl mb-12">
+              <span className="inline-block text-sm font-medium text-industrial mb-4" translate="no">EXTENSION SOLUTIONS</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                확장 솔루션(옵션)
+              </h2>
+              <p className="text-muted-foreground">
+                현장 요구에 따라 안전/에너지/데이터 통합까지 모듈 형태로 확장 가능합니다.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {extensionSolutions.map((solution) => (
+                <div
+                  key={solution.title}
+                  className="group p-6 rounded-xl border border-border bg-card hover:shadow-card hover:border-industrial/30 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-industrial/10 transition-colors">
+                    <solution.icon size={24} className="text-industrial" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{solution.title}</h3>
+                  <p className="text-sm text-muted-foreground">{solution.description}</p>
                 </div>
               ))}
             </div>
