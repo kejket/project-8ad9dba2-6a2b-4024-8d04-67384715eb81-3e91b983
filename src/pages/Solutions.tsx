@@ -493,6 +493,125 @@ const Solutions = () => {
           </div>
         </section>
 
+        {/* Digital Twin Sync Visualization */}
+        <section className="py-20 bg-background">
+          <div className="container-narrow section-padding">
+            <div className="p-10 rounded-2xl border border-primary-foreground/10 bg-navy shadow-sm">
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                {/* Left: Text Content */}
+                <div className="text-primary-foreground">
+                  <h2 className="text-xl sm:text-2xl font-bold mb-3">
+                    디지털 트윈으로 현장 상태를 한눈에 이해합니다
+                  </h2>
+                  <p className="text-primary-foreground/80 mb-6 leading-relaxed">
+                    실제 설비에서 수집된 센싱 데이터를 기반으로<br />
+                    현장 상태와 변화 흐름을 가상 모델로 직관적으로 확인할 수 있습니다.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-industrial-light mt-2 flex-shrink-0" />
+                      <p className="text-sm text-primary-foreground/90">실시간 설비 상태 동기화</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-industrial-light mt-2 flex-shrink-0" />
+                      <p className="text-sm text-primary-foreground/90">운영 조건 변경 시 사전 영향 검토 (What-if)</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-industrial-light mt-2 flex-shrink-0" />
+                      <p className="text-sm text-primary-foreground/90">운영 효율 개선을 위한 판단 기준 제공</p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-industrial-light mt-2 flex-shrink-0" />
+                      <p className="text-sm text-primary-foreground/90">예측 기반 유지보수 계획 수립</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Circular Sync Visualization */}
+                <div className="flex justify-center lg:justify-end">
+                  <div className="relative w-full max-w-sm aspect-square">
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" style={{ overflow: 'visible' }}>
+                      {/* Background circle for text */}
+                      <circle
+                        cx="200"
+                        cy="200"
+                        r="100"
+                        fill="#13396c"
+                        stroke="#405073"
+                        strokeWidth="2"
+                      />
+                      
+                      {/* Outer dashed circle (rotating) */}
+                      <g className="animate-slow-rotate" style={{ transformOrigin: '200px 200px' }}>
+                        <circle
+                          cx="200"
+                          cy="200"
+                          r="145"
+                          fill="none"
+                          stroke="#405073"
+                          strokeWidth="1.5"
+                          strokeDasharray="6 6"
+                          opacity="0.6"
+                        />
+                      </g>
+                      
+                      {/* Inner solid circle */}
+                      <circle
+                        cx="200"
+                        cy="200"
+                        r="125"
+                        fill="none"
+                        stroke="#405073"
+                        strokeWidth="2"
+                        opacity="0.7"
+                      />
+
+                      {/* Data labels on outer circle (static, not rotating) */}
+                      <g>
+                        {/* 입력데이터 - Top */}
+                        <circle cx="200" cy="55" r="3.5" fill="#405073" />
+                        <text x="200" y="70" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                          입력데이터
+                        </text>
+                        
+                        {/* 진동데이터 - Right */}
+                        <circle cx="345" cy="200" r="3.5" fill="#405073" />
+                        <text x="345" y="195" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                          진동데이터
+                        </text>
+                        
+                        {/* 전력데이터 - Bottom */}
+                        <circle cx="200" cy="345" r="3.5" fill="#405073" />
+                        <text x="200" y="335" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                          전력데이터
+                        </text>
+                        
+                        {/* 온도데이터 - Left */}
+                        <circle cx="55" cy="200" r="3.5" fill="#405073" />
+                        <text x="55" y="195" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                          온도데이터
+                        </text>
+                      </g>
+                    </svg>
+
+                    {/* Center text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center px-4">
+                        <p className="text-sm sm:text-base font-bold text-white leading-tight">
+                          실시간 현장 데이터
+                        </p>
+                        <p className="text-lg sm:text-xl font-bold leading-tight mt-1" style={{ color: '#38a2ea' }}>
+                          동기화
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Digital Twin Summary */}
         <DigitalTwinSummary />
 

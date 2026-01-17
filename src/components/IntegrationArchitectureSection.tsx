@@ -82,35 +82,7 @@ const IntegrationArchitectureSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const layerIcons = entry.target.querySelectorAll('.architecture-layer-icon');
-            layerIcons.forEach((icon, index) => {
-              setTimeout(() => {
-                icon.classList.add('layer-icon-animate');
-                // 이전 아이콘은 약간의 효과 유지
-                if (index > 0) {
-                  setTimeout(() => {
-                    layerIcons[index - 1].classList.add('layer-icon-persist');
-                  }, 500);
-                }
-              }, index * 1200); // 느린 속도로 순차적 애니메이션 (1.2초 간격)
-            });
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
-    );
-
-    if (architectureRef.current) {
-      observer.observe(architectureRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  // 아이콘 모션 애니메이션 제거됨
 
   return (
     <section id="system-architecture" className="py-20 bg-background">
@@ -137,11 +109,11 @@ const IntegrationArchitectureSection = () => {
           </h3>
           
           {/* Desktop View */}
-          <div className="hidden lg:flex items-center justify-between gap-4">
+          <div className="hidden lg:flex items-start justify-between gap-4">
             {architectureLayers.map((layer, index) => (
-              <div key={layer.id} className="flex items-center gap-4 flex-1">
-                <div className="flex-1 text-center">
-                  <div className={`architecture-layer-icon w-16 h-16 rounded-xl ${layer.color} flex items-center justify-center mb-4 mx-auto transition-all duration-[2000ms] ease-in-out`}>
+              <div key={layer.id} className="flex items-start gap-4 flex-1">
+                <div className="flex-1 text-center flex flex-col items-center">
+                  <div className={`w-16 h-16 rounded-xl ${layer.color} flex items-center justify-center mb-4`}>
                     <layer.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">{layer.title}</h4>
@@ -151,9 +123,11 @@ const IntegrationArchitectureSection = () => {
                   </p>
                 </div>
                 {index < architectureLayers.length - 1 && (
-                  <div className="flex items-center">
+                  <div className="flex items-center relative self-center">
                     <div className="w-8 h-0.5 bg-border" />
-                    <ArrowRight className="w-5 h-5 text-industrial" />
+                    <div className="arrow-slide-right">
+                      <ArrowRight className="w-5 h-5 text-industrial" />
+                    </div>
                     <div className="w-8 h-0.5 bg-border" />
                   </div>
                 )}
@@ -166,7 +140,7 @@ const IntegrationArchitectureSection = () => {
             {architectureLayers.map((layer, index) => (
               <div key={layer.id}>
                 <div className="flex items-start gap-4">
-                  <div className={`architecture-layer-icon w-12 h-12 rounded-lg ${layer.color} flex items-center justify-center flex-shrink-0 transition-all duration-[2000ms] ease-in-out`}>
+                  <div className={`w-12 h-12 rounded-lg ${layer.color} flex items-center justify-center flex-shrink-0`}>
                     <layer.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
