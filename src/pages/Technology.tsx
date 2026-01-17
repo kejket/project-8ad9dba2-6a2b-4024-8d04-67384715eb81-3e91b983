@@ -39,7 +39,7 @@ const Technology = () => {
         <PageHeader
           label="CORE TECHNOLOGY"
           title="센싱 기술과 디지털 트윈, 산업 현장 데이터를 다루는 핵심 기술"
-          description={<>센서 데이터의 수집, 전송, 분석, 시각화까지<br />현장 데이터를 안정적으로 처리하기 위한 기술 흐름을 설명합니다.</>}
+          description="센서 데이터의 수집, 전송, 분석, 시각화까지 현장 데이터를 안정적으로 처리하기 위한 기술 흐름을 설명합니다."
         />
         <SensorModulesSection />
         <SoftwareTechnologySection />

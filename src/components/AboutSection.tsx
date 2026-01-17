@@ -63,19 +63,19 @@ const AboutSection = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
                   <p className="text-4xl font-bold text-industrial-light mb-2">10+</p>
-                  <p className="text-sm text-primary-foreground/70">년 경험</p>
+                  <p className="text-sm text-primary-foreground/70">현장 구현 경험</p>
                 </div>
                 <div className="text-center p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
                   <p className="text-4xl font-bold text-industrial-light mb-2">100+</p>
-                  <p className="text-sm text-primary-foreground/70">도입 현장</p>
+                  <p className="text-sm text-primary-foreground/70">적용 현장 수</p>
                 </div>
                 <div className="text-center p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
                   <p className="text-4xl font-bold text-industrial-light mb-2">50+</p>
-                  <p className="text-sm text-primary-foreground/70">기술 파트너</p>
+                  <p className="text-sm text-primary-foreground/70">기술 협력 파트너</p>
                 </div>
                 <div className="text-center p-6 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10">
                   <p className="text-4xl font-bold text-industrial-light mb-2">24/7</p>
-                  <p className="text-sm text-primary-foreground/70">기술 지원</p>
+                  <p className="text-sm text-primary-foreground/70">운영 지원 체계</p>
                 </div>
               </div>
 

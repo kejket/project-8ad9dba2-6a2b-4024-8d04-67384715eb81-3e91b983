@@ -30,19 +30,19 @@ const About = () => {
       step: "01",
       title: "Sense",
       titleKo: "감지",
-      description: "산업 현장의 물리적, 운영적 조건을 센싱 기술을 통해 데이터로 수집합니다. 보이지 않던 미세한 변화와 잠재적 위험 요소까지 포착합니다."
+      description: "sentia는 산업 현장의 물리적·운영적 조건을 정밀한 센싱 기술로 데이터화합니다.\n눈에 보이지 않는 미세한 변화와 잠재적 위험까지 현장에서 먼저 감지합니다."
     },
     {
       step: "02",
       title: "Understand",
       titleKo: "이해",
-      description: "수집된 데이터를 검증하고 분석하여 의미 있는 정보로 변환합니다. 패턴, 이상 징후, 변화 추이를 식별하여 현장 상황을 정확하게 파악합니다."
+      description: "수집된 데이터는 검증과 분석을 거쳐 패턴과 이상 징후, 변화의 흐름으로 정리됩니다.\nsentia는 현장의 상황을 운영자가 신뢰할 수 있는 정보로 해석합니다."
     },
     {
       step: "03",
       title: "Decide",
-      titleKo: "판단",
-      description: "분석된 정보를 바탕으로 운영 판단을 지원합니다. 더 안전하고 효율적인 의사결정이 가능하도록 신뢰할 수 있는 근거를 제공합니다."
+      titleKo: "결정",
+      description: "해석된 정보는 운영 판단과 대응을 위한 근거로 활용됩니다.\nsentia는 보다 안전하고 효율적인 의사결정이 가능하도록 현장에서 바로 사용할 수 있는 기준을 제공합니다."
     }
   ];
 
@@ -71,7 +71,7 @@ const About = () => {
       <PageHeader
         label="ABOUT SENTIA"
         title="SENTIA를 이해하다"
-        description="sentia는 산업 현장을 정확하게 이해하는 것에서 출발합니다. 보이지 않던 위험과 미세한 변화를 감지하고, 그 이해를 신뢰할 수 있는 판단과 의사결정으로 연결합니다."
+        description="SENTIA는 현장을 이해하는 기술에서 출발합니다. 보이지 않는 위험과 미세한 변화를 감지하고, 그 이해를 신뢰할 수 있는 판단과 의사결정으로 연결합니다."
       />
 
       <main>
@@ -79,9 +79,9 @@ const About = () => {
         <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-6xl">
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
                 {/* Image */}
-                <div className="w-full lg:w-2/5 flex-shrink-0 flex items-stretch">
+                <div className="w-full lg:w-2/5 flex-shrink-0">
                   <img 
                     src={sentiaBrandImage} 
                     alt="Sentia Brand" 
@@ -89,22 +89,16 @@ const About = () => {
                   />
                 </div>
                 {/* Text Content */}
-                <div className="flex-1 lg:w-3/5">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
-                    SENTIA라는 이름의 의미
-                  </h2>
+                <div className="flex-1 lg:w-3/5 flex flex-col justify-between">
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+                      SENTIA라는 이름의 의미
+                    </h2>
                     <p>
-                      sentia는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합에서 비롯된 이름입니다.
+                      SENTIA는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합입니다. 단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 의미 있는 이해로 전환하는 것이 sentia 기술의 핵심 역할입니다.
                     </p>
                     <p>
-                      이 이름은 단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 해석하고 의미 있는 이해로 전환하는 sentia의 핵심 역할을 반영합니다.
-                    </p>
-                    <p>
-                      산업 현장에서 발생하는 물리적 현상을 감지(Sense)하고, 이를 통찰력 있는 정보(Intelligence)로 변환하여, 신뢰할 수 있는 판단의 기반을 만드는 것이 sentia가 추구하는 가치입니다.
-                    </p>
-                    <p>
-                      SENTIA는 기술이 산업과 사회에 긍정적인 영향을 미치도록 고민합니다.
+                      sentia는 산업 현장의 물리적 현상을 감지하고(<span className="text-foreground font-medium">Sense</span>), 이를 판단 가능한 정보(<span className="text-foreground font-medium">Intelligence</span>)로 변환하여 신뢰할 수 있는 운영 판단의 기반을 만듭니다.
                     </p>
                   </div>
                 </div>
@@ -123,13 +117,10 @@ const About = () => {
               <div className="space-y-6">
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    sentia에게 기술은 현실을 정확하게 이해하기 위한 도구입니다. 
+                    sentia에게 기술은 현실을 정확히 이해하기 위한 도구입니다. 정확한 센싱은 신뢰할 수 있는 시스템의 출발점이며, 데이터의 품질과 정합성이 보장되지 않으면 그 위에 구축되는 모든 분석과 판단은 의미를 잃습니다.
                   </p>
                   <p>
-                    정확한 센싱은 신뢰할 수 있는 시스템의 기초입니다. 데이터의 품질과 정합성이 보장되지 않으면, 그 위에 구축되는 모든 분석과 판단은 의미를 잃습니다.
-                  </p>
-                  <p>
-                    sentia는 화려한 기술 시연보다 현장에서 실제로 작동하는 기술을 추구합니다. 적용 가능성, 신뢰성, 그리고 현장 전문가들이 신뢰할 수 있는 결과를 제공하는 것이 sentia 기술의 기준입니다.
+                    sentia는 화려한 기술보다 현장에서 실제로 작동하는 기술, 검증 가능한 결과를 만드는 기술을 추구합니다. 적용 가능성, 신뢰성, 그리고 현장 전문가가 신뢰할 수 있는 결과. 이것이 sentia 기술의 기준입니다.
                   </p>
                 </div>
                 
@@ -157,11 +148,8 @@ const About = () => {
           <div className="container-narrow section-padding">
             <div className="mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                SENTIA WORKS
+                <span translate="no">SENTIA WORKS</span>_ <span className="font-normal">센티아가 일하는 방식</span>
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
-                sentia는 산업 현장의 데이터를 의미 있는 판단으로 연결하는 체계적인 프로세스를 따릅니다.
-              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -170,13 +158,15 @@ const About = () => {
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-navy/20">{process.step}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">
+                  <h3 className="text-xl font-bold text-foreground mb-1" translate="no">
                     {process.title}
                   </h3>
-                  <p className="text-sm text-navy font-medium mb-3">{process.titleKo}</p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {process.description}
-                  </p>
+                  <p className="text-sm text-navy font-medium mb-3"><span translate="no">{process.title}</span> ｜ {process.titleKo}</p>
+                  <div className="text-muted-foreground leading-relaxed space-y-2">
+                    {process.description.split('\n').map((line, idx) => (
+                      <p key={idx}>{line}</p>
+                    ))}
+                  </div>
                   {index < workProcess.length - 1 && (
                     <div className="hidden md:block absolute top-8 -right-4 text-border">
                       <ArrowRight size={24} />
@@ -193,10 +183,10 @@ const About = () => {
           <div className="container-narrow section-padding">
             <div className="mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                SENTIA의 원칙
+                SENTIA의 기준
               </h2>
               <p className="text-muted-foreground max-w-2xl">
-                sentia의 모든 기술 개발과 솔루션 제공은 다음 원칙에 기반합니다.
+                sentia의 모든 기술 개발과 솔루션 제공은 다음 기준에 기반합니다.
               </p>
             </div>
 
@@ -218,8 +208,30 @@ const About = () => {
           </div>
         </section>
 
-        {/* Section 6: Page Connections */}
+        {/* Section 6: Technology Responsibility */}
         <section className="py-20 bg-background">
+          <div className="container-narrow section-padding">
+            <div className="max-w-3xl">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">
+                기술의 책임에 대해
+              </h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  sentia는 기술이 단순한 효율 향상을 넘어 산업과 사회에 긍정적인 영향을 미쳐야 한다고 믿습니다.
+                </p>
+                <p>
+                  생명 안전을 최우선 가치로 삼고, 환경 보호와 지속 가능한 산업 환경에 기여하는 기술을 지향합니다. 또한 지역 사회와 함께 성장하기 위해 사회공헌과 공공 안전 분야에서 기술이 기여할 수 있는 역할을 지속적으로 만들어가고자 합니다.
+                </p>
+                <p>
+                  sentia의 기술은 사람을 이롭게 하고, 사회에 책임지는 방향으로 발전해야 합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 7: Page Connections */}
+        <section className="py-20 bg-surface">
           <div className="container-narrow section-padding">
             <div className="mb-12">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">

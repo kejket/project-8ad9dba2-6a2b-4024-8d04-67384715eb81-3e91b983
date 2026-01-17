@@ -86,7 +86,7 @@ const SolutionsSection = () => {
             className="group inline-flex items-center gap-2 text-industrial hover:text-industrial-dark font-medium transition-all duration-300 hover:gap-3"
           >
             <span className="relative">
-              모든 솔루션 보기
+            모든 솔루션 보기
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-industrial-dark group-hover:w-full transition-all duration-300"></span>
             </span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />

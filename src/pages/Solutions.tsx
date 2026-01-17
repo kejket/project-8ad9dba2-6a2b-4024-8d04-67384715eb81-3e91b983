@@ -298,7 +298,7 @@ const Solutions = () => {
       <main>
         <PageHeader
           label="SOLUTIONS"
-          title={<>설비 상태를 파악하고<br />운영 대응력을 높입니다</>}
+          title={<>설비 상태를 파악하고 운영 <br /> 대응력을 높입니다</>}
           description="현장에서 발생하는 설비 이상과 환경 변화를 조기에 감지하고, 운영자가 적시에 대응할 수 있도록 필요한 정보를 제공합니다."
         />
 
@@ -504,8 +504,7 @@ const Solutions = () => {
                     디지털 트윈으로 현장 상태를 한눈에 이해합니다
                   </h2>
                   <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                    실제 설비에서 수집된 센싱 데이터를 기반으로<br />
-                    현장 상태와 변화 흐름을 가상 모델로 직관적으로 확인할 수 있습니다.
+                    실제 설비에서 수집된 센싱 데이터를 기반으로 현장 상태와 변화 흐름을 가상 모델로 직관적으로 확인할 수 있습니다.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-start gap-3">
@@ -548,10 +547,10 @@ const Solutions = () => {
                           cy="200"
                           r="145"
                           fill="none"
-                          stroke="#405073"
+                          stroke="#5a6b8a"
                           strokeWidth="1.5"
                           strokeDasharray="6 6"
-                          opacity="0.6"
+                          opacity="0.8"
                         />
                       </g>
                       
@@ -570,25 +569,29 @@ const Solutions = () => {
                       <g>
                         {/* 입력데이터 - Top */}
                         <circle cx="200" cy="55" r="3.5" fill="#405073" />
-                        <text x="200" y="70" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                        <rect x="170" y="60" width="60" height="20" rx="10" ry="10" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+                        <text x="200" y="72" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500" dominantBaseline="middle">
                           입력데이터
                         </text>
                         
                         {/* 진동데이터 - Right */}
                         <circle cx="345" cy="200" r="3.5" fill="#405073" />
-                        <text x="345" y="195" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                        <rect x="320" y="188" width="60" height="20" rx="10" ry="10" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+                        <text x="350" y="198" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500" dominantBaseline="middle">
                           진동데이터
                         </text>
                         
                         {/* 전력데이터 - Bottom */}
                         <circle cx="200" cy="345" r="3.5" fill="#405073" />
-                        <text x="200" y="335" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                        <rect x="170" y="328" width="60" height="20" rx="10" ry="10" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+                        <text x="200" y="338" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500" dominantBaseline="middle">
                           전력데이터
                         </text>
                         
                         {/* 온도데이터 - Left */}
                         <circle cx="55" cy="200" r="3.5" fill="#405073" />
-                        <text x="55" y="195" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500">
+                        <rect x="20" y="188" width="60" height="20" rx="10" ry="10" fill="rgba(255, 255, 255, 0.2)" stroke="rgba(255, 255, 255, 0.3)" strokeWidth="1" />
+                        <text x="50" y="198" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="500" dominantBaseline="middle">
                           온도데이터
                         </text>
                       </g>
@@ -597,8 +600,8 @@ const Solutions = () => {
                     {/* Center text */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center px-4">
-                        <p className="text-sm sm:text-base font-bold text-white leading-tight">
-                          실시간 현장 데이터
+                        <p className="text-sm sm:text-base font-bold text-white leading-tight" translate="no">
+                          Real-time Data Sync
                         </p>
                         <p className="text-lg sm:text-xl font-bold leading-tight mt-1" style={{ color: '#38a2ea' }}>
                           동기화

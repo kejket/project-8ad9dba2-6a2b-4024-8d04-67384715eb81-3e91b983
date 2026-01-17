@@ -115,6 +115,10 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "slow-rotate": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,6 +129,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
+        "slow-rotate": "slow-rotate 40s linear infinite",
       },
     },
   },
