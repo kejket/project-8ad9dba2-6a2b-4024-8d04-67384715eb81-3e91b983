@@ -27,7 +27,7 @@ const techPillars = [
     id: "digital-twin",
     anchor: "digital-twin",
     icon: Box,
-    title: "운영 판단을 돕는 디지털 트윈",
+    title: "현장 데이터를 실시간으로 동기화하는 디지털 트윈",
     description: "실제 현장 데이터를 반영한 디지털 모델로 설비 상태를 이해하고, 운영 조건 변화의 영향을 사전에 검토할 수 있도록 지원합니다.",
   },
 ];
@@ -43,8 +43,7 @@ const TechnologySection = () => {
             데이터 기반 의사결정 지원
           </h2>
           <p className="text-lg text-muted-foreground">
-            센서 데이터의 수집부터 분석, 시각화까지 일관된 프로세스를 통해
-            정확한 현장 이해와 신뢰할 수 있는 판단을 지원합니다.
+            Sentia의 기술은 데이터를 '이해 가능한 정보'로 전환합니다.
           </p>
         </div>
 
@@ -54,7 +53,8 @@ const TechnologySection = () => {
             <Link
               key={pillar.id}
               to={`/technology#${pillar.anchor}`}
-              className="group bg-card rounded-xl border border-border p-6 lg:p-8 shadow-card hover:shadow-lg hover:border-industrial/20 transition-all duration-300"
+              className="group rounded-xl border border-border p-6 lg:p-8 shadow-card hover:shadow-lg hover:border-industrial/20 transition-all duration-300"
+              style={{ backgroundColor: '#F4F6F9' }}
             >
               {/* Icon */}
               <div className="w-12 h-12 rounded-lg bg-industrial/10 flex items-center justify-center mb-5 group-hover:bg-industrial/20 transition-colors">

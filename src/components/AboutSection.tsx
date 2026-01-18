@@ -12,9 +12,7 @@ const AboutSection = () => {
               사람을 이롭게 하는 기술
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              sentia는 현장에서 발생하는 물리적 현상을 데이터로 전환하고, 
-              그 데이터를 해석하여 운영에 필요한 정보를 제공합니다.
-              오랜 현장 경험을 바탕으로 각 산업 환경에 맞는 접근 방식을 갖추고 있습니다.
+              Sentia는 기술의 정확성만큼, 기술의 책임을 중요하게 생각합니다.
             </p>
 
             {/* Values */}

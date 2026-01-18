@@ -23,22 +23,22 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface-elevated/95 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 gradient-hero backdrop-blur-md border-b border-primary-foreground/10">
       <div className="container-narrow section-padding">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-[66px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-navy" translate="no">sentia</span>
+            <span className="text-base font-bold text-white uppercase" translate="no">SENTIA</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - 브랜드네임에 가까이 배치 */}
+          <nav className="hidden md:flex items-center gap-8 ml-10">
             {navItems.map((item) => (
               item.href.startsWith("/") && !item.href.includes("#") ? (
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-white/90 hover:text-white transition-colors"
                   translate="no"
                 >
                   {item.label}
@@ -48,7 +48,7 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-base font-medium text-white/90 hover:text-white transition-colors"
                   translate="no"
                 >
                   {item.label}
@@ -57,9 +57,15 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          {/* Contact 버튼 - 오른쪽에 배치 */}
+          <div className="hidden md:block ml-auto">
             <Link to="/contact">
-              <Button variant="navy" size="sm" translate="no">
+              <Button 
+                variant="navy" 
+                size="sm" 
+                translate="no"
+                className="bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full px-6"
+              >
                 Contact
               </Button>
             </Link>
@@ -67,7 +73,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-white ml-auto"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -77,14 +83,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
+          <nav className="md:hidden py-4 border-t border-primary-foreground/10">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 item.href.startsWith("/") && !item.href.includes("#") ? (
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-base font-medium text-white/90 hover:text-white transition-colors py-2"
                     onClick={() => setIsMenuOpen(false)}
                     translate="no"
                   >
@@ -95,7 +101,7 @@ const Header = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-base font-medium text-white/90 hover:text-white transition-colors py-2"
                     translate="no"
                   >
                     {item.label}
@@ -103,7 +109,12 @@ const Header = () => {
                 )
               ))}
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="navy" size="sm" className="w-full mt-2" translate="no">
+                <Button 
+                  variant="navy" 
+                  size="sm" 
+                  className="w-full mt-2 bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full px-6" 
+                  translate="no"
+                >
                   Contact
                 </Button>
               </Link>

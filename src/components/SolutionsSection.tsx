@@ -37,8 +37,7 @@ const SolutionsSection = () => {
             <span className="block sm:inline">센싱 솔루션</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            sentia는 산업 현장의 미세한 변화를 감지하고 해석하여
-            정확한 판단과 의사결정을 지원하는 맞춤형 솔루션을 제공합니다.
+            Sentia의 솔루션은 현장의 문제를 '판단 가능한 상태'로 만듭니다.
           </p>
         </div>
 

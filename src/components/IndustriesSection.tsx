@@ -51,7 +51,7 @@ const IndustriesSection = () => {
             다양한 산업 현장에 적용
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            sentia의 센싱 솔루션은 다양한 산업 현장의 상태를 모니터링하고, 운영 의사결정을 지원합니다.
+            Sentia의 기술은 다양한 산업 현장에서 운영 판단을 가능하게 합니다.
           </p>
         </div>
 

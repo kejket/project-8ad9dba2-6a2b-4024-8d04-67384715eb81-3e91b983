@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-industrial.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
+    <section className="relative flex items-center justify-center gradient-hero overflow-hidden min-h-[52vh] pt-[66px]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-industrial rounded-full blur-3xl animate-pulse-subtle" />
@@ -21,7 +21,7 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="relative container-narrow section-padding pt-28 pb-20">
+      <div className="relative container-narrow section-padding w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="text-primary-foreground">
@@ -30,52 +30,30 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-primary-foreground/90">지능형 센싱 솔루션</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              기술로 신뢰를 만들고,
-              <br />
-              <span className="text-industrial-light">기술로 가치를 확장합니다</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              기술로 신뢰를 만들고, <span className="text-industrial-light">기술로 가치를 확장합니다</span>
             </h1>
 
-            <p className="text-lg text-primary-foreground/75 mb-10 max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              sentia는 센싱 기술을 기반으로 산업 현장을 정확하게 이해하고, 
+            <p className="text-sm text-primary-foreground/60 mb-16 max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              sentia는 센싱 기술을 기반으로 산업 현장을 정확하게 이해하고,
               <br />
               그 이해를 신뢰할 수 있는 솔루션으로 구현합니다.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 mt-12 pb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Link to="/demo">
-                <Button variant="hero" size="xl">
+                <Button variant="hero" size="xl" className="text-primary-foreground/60">
                   데모 요청
                   <ArrowRight size={20} />
                 </Button>
               </Link>
               <Link to="/solutions">
-                <Button variant="hero-outline" size="xl">
+                <Button variant="hero-outline" size="xl" className="text-primary-foreground/60">
                   솔루션 알아보기
                 </Button>
               </Link>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-14 pt-8 border-t border-primary-foreground/15 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <p className="text-sm text-primary-foreground/50 mb-5 uppercase tracking-wider">신뢰받는 파트너</p>
-              <div className="flex items-center gap-8">
-                <div className="text-center">
-                  <p className="text-xl font-bold tracking-tight" translate="no">Scalable</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">현장 중심 설계</p>
-                </div>
-                <div className="w-px h-12 bg-primary-foreground/15" />
-                <div className="text-center">
-                  <p className="text-xl font-bold tracking-tight" translate="no">Accurate</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">품질우선</p>
-                </div>
-                <div className="w-px h-12 bg-primary-foreground/15" />
-                <div className="text-center">
-                  <p className="text-xl font-bold tracking-tight" translate="no">Always On</p>
-                  <p className="text-xs text-primary-foreground/60 mt-1">상시 운영 대응</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Visual */}
