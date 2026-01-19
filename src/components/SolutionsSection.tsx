@@ -37,7 +37,7 @@ const SolutionsSection = () => {
             <span className="block sm:inline">센싱 솔루션</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Sentia의 솔루션은 현장의 문제를 '판단 가능한 상태'로 만듭니다.
+            Sentia의 솔루션은 현장의 문제에 신속하게 대응할 수 있도록 지원합니다.
           </p>
         </div>
 

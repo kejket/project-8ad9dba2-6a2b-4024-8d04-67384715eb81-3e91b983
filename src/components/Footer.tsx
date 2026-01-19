@@ -8,7 +8,7 @@ const Footer = () => {
             <span className="text-2xl font-bold mb-4 block">sentia</span>
             <p className="text-primary-foreground/70 mb-4 max-w-md">
               기술로 신뢰를 만들고, 기술로 가치를 확장합니다.
-              산업용 센싱 솔루션 전문 기업입니다.
+              SENTIA는 산업용 센싱 솔루션 전문 기업입니다.
             </p>
             <div className="space-y-2 text-sm text-primary-foreground/60">
               <p>서울특별시 양천구 월정로22 B03</p>
