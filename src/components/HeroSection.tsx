@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-industrial.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center justify-center gradient-hero overflow-hidden min-h-[52vh] pt-[66px]">
+    <section className="relative gradient-hero overflow-hidden pt-[66px]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-industrial rounded-full blur-3xl animate-pulse-subtle" />
@@ -21,8 +21,8 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="relative container-narrow section-padding w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative container-narrow section-padding w-full min-h-[calc(100vh-66px)] lg:min-h-[640px] xl:min-h-[720px] 2xl:min-h-[760px] lg:max-h-[760px] flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center w-full">
           {/* Left Content */}
           <div className="text-primary-foreground">
             <div className="inline-flex items-center gap-2 bg-industrial/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8 animate-fade-in">
@@ -57,14 +57,17 @@ const HeroSection = () => {
           </div>
 
           {/* Right Visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative animate-fade-in-right" style={{ animationDelay: "0.2s" }}>
+          <div className="relative hidden lg:flex items-center justify-center h-full">
+            <div
+              className="relative w-full h-full max-h-full animate-fade-in-right"
+              style={{ animationDelay: "0.2s" }}
+            >
               {/* Hero Image Container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src={heroImage} 
                   alt="Industrial sensing solution in manufacturing facility" 
-                  className="w-full h-auto object-cover aspect-[4/3]"
+                  className="w-full h-full object-contain"
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />

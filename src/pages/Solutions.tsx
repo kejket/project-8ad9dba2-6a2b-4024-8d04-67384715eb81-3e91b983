@@ -298,7 +298,7 @@ const Solutions = () => {
       <main>
         <PageHeader
           label="SOLUTIONS"
-          title={<>설비 상태를 파악하고 운영 <br /> 대응력을 높입니다</>}
+          title={<>설비 상태를 파악하고 운영 대응력을 높입니다</>}
           description="현장에서 발생하는 설비 이상과 환경 변화를 조기에 감지하고, 운영자가 적시에 대응할 수 있도록 필요한 정보를 제공합니다."
         />
 

@@ -79,7 +79,7 @@ const About = () => {
         <section className="py-20 bg-background">
           <div className="container-narrow section-padding">
             <div className="max-w-6xl">
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch lg:items-end">
                 {/* Image */}
                 <div className="w-full lg:w-2/5 flex-shrink-0">
                   <img 
@@ -95,7 +95,8 @@ const About = () => {
                       SENTIA라는 이름의 의미
                     </h2>
                     <p>
-                      SENTIA는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합입니다. 단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 의미 있는 이해로 전환하는 것이 sentia 기술의 핵심 역할입니다.
+                      SENTIA는 <span className="text-foreground font-medium">Sense</span>와 <span className="text-foreground font-medium">Intelligence</span>의 결합입니다.<br /> 
+                      단순히 데이터를 수집하는 것을 넘어, 센싱을 통해 얻은 정보를 의미 있는 이해로 전환하는 것이 sentia 기술의 핵심 역할입니다.
                     </p>
                     <p>
                       sentia는 산업 현장의 물리적 현상을 감지하고(<span className="text-foreground font-medium">Sense</span>), 이를 판단 가능한 정보(<span className="text-foreground font-medium">Intelligence</span>)로 변환하여 신뢰할 수 있는 운영 판단의 기반을 만듭니다.
