@@ -601,7 +601,7 @@ const Solutions = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center px-4">
                         <p className="text-sm sm:text-base font-bold text-white leading-tight" translate="no">
-                          Real-time Data Sync
+                          Real-time <br /> Data Sync
                         </p>
                         <p className="text-lg sm:text-xl font-bold leading-tight mt-1" style={{ color: '#38a2ea' }}>
                           동기화
